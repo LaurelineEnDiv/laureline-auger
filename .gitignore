@@ -1,0 +1,24 @@
+# Ignorer les fichiers générés par Node.js (si applicable)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Fichiers temporaires générés par les éditeurs de code
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Fichiers Sass ou CSS générés automatiquement
+.sass-cache/
+*.map
+
+# Autres fichiers ou dossiers inutiles
+dist/                 # Dossier de distribution, si applicable
+coverage/             # Dossier de couverture de tests, si applicable
+
+# Ignorer les fichiers sensibles ou spécifiques à l'environnement local
+.env                  # Si vous utilisez des variables d'environnement locales

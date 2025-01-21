@@ -1,0 +1,55 @@
+/*
+Theme Name: Nathalie Mota
+Theme URI: https://exemple.com
+Author: Laureline Auger
+Author URI: https://exemple.com
+Description: Thème personnalisé pour Nathalie Mota
+Version: 1.0
+Text Domain: nathalie-mota
+*/
+
+// Variables
+$black: #000000;
+$mobile: 768px;
+$tablette: 1024px;
+
+@import 'home-page';
+@import 'navigation';
+@import 'modale-contact';
+@import 'single-photo';
+@import 'photo-block';
+@import 'lightbox';
+
+/******* Style général *******/
+body {
+    color: $black;
+    font-family: 'Space Mono', monospace;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    margin : 0 4em;
+    box-sizing: border-box;
+}
+
+h1, .title {
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+}
+
+
+
+
+
+
+
+
+
+
+
+

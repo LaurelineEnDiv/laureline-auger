@@ -1,0 +1,150 @@
+.single-photo {
+    position: relative;
+    
+    .separator {
+        border: solid 0.5px $black;
+        margin : 0 4em;
+        
+            &.half {
+                width: 42%;
+                margin-left: 4em;
+    
+                @media (max-width: $mobile) {
+                    width: 100%;
+                    margin-left: 0;
+                }
+            }
+    
+            @media (max-width: $mobile) {
+                width: 100%;
+                margin: 0;
+            }
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%); /* Centre sur l'écran */
+        height: 15px;
+        background: linear-gradient(to bottom, #f3f2f2, #ffffff);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    figure {
+        display: flex; 
+        align-items: flex-end;
+        padding-top: 1em;
+        margin-bottom: 0;
+
+        .photo-infos {   
+            flex: 1 1 50%;
+            width: 100%;
+            box-sizing: border-box; 
+
+            h1 {
+                font-style: italic;
+                font-weight: 400;
+                font-size: 66px;
+                line-height: 58px;
+                margin: 20px 0;
+                padding-right: 1rem;
+                max-width: 100%; 
+                word-break: break-word;
+
+                @media (max-width: $mobile) {
+                    font-size: 46px;
+                    line-height: 48px;
+                }
+            }
+
+            .title {
+                @media (max-width: $mobile) {
+                    font-size: 14px;
+                }
+            }
+
+            @media (max-width: $mobile) {
+                width:100%;
+            }
+        }
+
+        .photo {
+            flex: 1 1 50%;
+
+            figure.wp-block-image {
+                margin-bottom: 0;
+            }
+
+            p {
+                margin:0
+            }
+        }
+
+        @media (max-width: $mobile) {
+            flex-direction: column-reverse;
+            align-items: start;
+        }
+    }
+
+    //////// Contact + Nav Photos //////////////////
+    .interaction-photo {
+        height: 118px;
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+
+        @media (max-width: $tablette) {
+            margin-bottom: 1em;
+        }
+
+        .contact-photo {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            flex: 1 1 50%;
+
+            @media (max-width: $tablette) {
+                flex: 2 1 70%;
+            }
+
+            a {
+            padding : 1em 7em;
+            background-color: #D8D8D8;
+            border-radius: 2px;
+            }
+
+            @media (max-width: $mobile) {
+                flex-direction: column;
+            }
+        }
+
+        .nav-photos {
+            display: flex;
+            justify-content: flex-end;
+            flex: 1 1 50%;
+            margin-top: 1rem;
+                
+                .thumbnail-current img {
+                    height:71px;
+                    width: 81px;
+                }
+        
+                .photo-navigation {
+                    display: flex;
+                    justify-content: space-between;
+        
+                        a {
+                        font-size: 25px;
+                        }
+                }
+
+                @media (max-width: $mobile) {
+                    display: none;
+                }
+            }
+        }
+
+}
