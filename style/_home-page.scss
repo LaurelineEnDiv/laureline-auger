@@ -1,151 +1,145 @@
 .hero {
+    position: relative;
     width: 100%;
-    height: 962px; 
-    background-size: cover; 
-    background-position: center;
-    display:flex;
+    height: 70vh;
+    display: flex;
     justify-content: center;
     align-items: center;
-
-    @media (max-width: $mobile) { 
-        height: 253px; 
-    }
-
-    .hero-content {
-        width: 100%;
-        padding: 3em;
-        
-            h1 {
-                color: transparent;
-                -webkit-text-stroke: 3px white; 
-                font-size: 96px;
-                font-style: italic;
-                text-align: center; 
-    
-                @media (max-width: $mobile) { 
-                    font-size: 28px;
-                    -webkit-text-stroke: 0.86px white; 
-                }
-            }
-    }
+    text-align: center;
+    background: #A3C9A8;
+    overflow: hidden;
 }
 
-.filters-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 2em;
-    margin-top: 3em;
-
-    @media (max-width: $mobile) { 
-        flex-direction: column;
-        align-items: center; 
-        margin-top: 1.5em;
-        gap: 1em;
-    }
-
-    .taxonomies {
-        display: flex;
-        gap: 2em;
-
-        @media (max-width: $mobile) { 
-            flex-direction: column;
-            gap: 1em;
-        }
-    }
-
-    .filter-group {
-        position: relative;
-        display: flex;
-        box-sizing: border-box;
-        justify-content: space-between;
-        width: 260px;
-        font-family: "Poppins", sans-serif; 
-        font-size: 12px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        padding: 1em;
-        cursor: pointer;
-
-        @media (max-width: $tablette) { 
-            width: 180px; 
-        }
-
-        @media (max-width: $mobile) { 
-            width: 270px; 
-        }
-
-        &.open {
-            border: 1.3px solid #215AFF;
-            border-radius: 8px 8px 0 0;
-
-            .filter-options {
-                display: block;
-            }
-        }
-    
-        .filter-title {
-            text-transform: uppercase;
-        }
-    
-        .filter-options {
-            position: absolute;
-            box-sizing: border-box;
-            width: 260px;
-            top: 104%; 
-            left: 0;
-            display: none; 
-            background-color: white;
-            border-radius: 0 0 8px 8px;
-            padding: 1em 0;
-            z-index: 2;
-
-            @media (max-width: $tablette) { 
-                width: 180px; 
-            }
-    
-            @media (max-width: $mobile) { 
-                width: 270px; 
-            }
-    
-            .filter-option {
-                padding: 1em;
-                transition: background-color 0.3s;
-                cursor: pointer;
-    
-                &:hover {
-                    background-color: #FFD6D6;
-                }
-    
-                &:active {
-                    background-color: #FE5858; 
-                }
-
-                &.selected {
-                    background-color: #E00000; 
-                    color: #FFFFFF;
-                }
-            }
-        }
-    }
+.hero-content {
+    z-index: 2;
+    max-width: 800px;
 }
 
-///// Bouton Charger plus /////////
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+}
 
-.load-more-container {
+.highlight {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    text-transform: none;
+    color: #D88C6B; 
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #D88C6B; 
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background-color: #B86C54;
+    color: white;
+}
+
+.hero-graphic {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    width: 50%;
+    height: 50%;
     display: flex;
     justify-content: center;
-    margin-bottom: 2em;
-
-    #load-more-photos {
-        width: 272px;
-        background-color: #D8D8D8;
-        padding: 1em 3em;
-        border-radius: 2px;
-        text-align: center;
-    }
+    align-items: center;
 }
 
+.graphic-shape {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
 
+//////// Container //////
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
 
+.bulles {
+    display: flex;
+    justify-content: space-evenly; /* Espacement réduit et équilibré */
+    align-items: center; /* Aligner les bulles sur un même axe vertical */
+    width: 100%; /* Occuper toute la largeur disponible */
+    position: relative;
+    margin: 0 auto; /* Centrer l'ensemble des bulles dans le conteneur */
+    gap: 0.5rem; /* Espacement global réduit */
+}
 
+/* Styles des bulles */
+.bulles h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: #F8F5EC;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Forme circulaire */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: float-1 5s ease-in-out infinite; /* Animation par défaut */
+}
 
+/* Couleurs variées pour les bulles */
+.bulles h3:nth-child(1) { background-color: #A3C9A8; animation: float-1 6s ease-in-out infinite; } /* Vert sauge doux */
+.bulles h3:nth-child(2) { background-color: #D5E2C9; animation: float-2 5.5s ease-in-out infinite; } /* Vert olive clair */
+.bulles h3:nth-child(3) { background-color: #dfac5f; animation: float-3 5s ease-in-out infinite; } /* Beige sable */
+.bulles h3:nth-child(4) { background-color: #ecd1b2; animation: float-4 6.5s ease-in-out infinite; } /* Beige chaud */
+.bulles h3:nth-child(5) { background-color: #CDE1D3; animation: float-5 5.7s ease-in-out infinite; } /* Vert pâle */
+
+/* Animations distinctes pour chaque bulle */
+@keyframes float-1 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-10px, -10px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes float-2 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -20px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes float-3 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-15px, 10px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes float-4 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(20px, -10px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes float-5 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-20px, 20px); }
+    100% { transform: translate(0, 0); }
+}

@@ -1,15 +1,21 @@
 /*
-Theme Name: Nathalie Mota
+Theme Name: Laureline Auger
 Theme URI: https://exemple.com
 Author: Laureline Auger
 Author URI: https://exemple.com
-Description: Thème personnalisé pour Nathalie Mota
+Description: Thème personnalisé pour Laureline Auger
 Version: 1.0
-Text Domain: nathalie-mota
+Text Domain: laureline-auger
 */
 
-// Variables
+/* Palette de couleurs : SCSS */
+$yellow: #E3C200;
+$lightbrown: #ab9227;
+$white: #ffffff;
 $black: #000000;
+$text-color: #5A4A42;
+
+// Variables SCSS générales
 $mobile: 768px;
 $tablette: 1024px;
 
@@ -18,28 +24,25 @@ $tablette: 1024px;
 @import 'modale-contact';
 @import 'single-photo';
 @import 'photo-block';
-@import 'lightbox';
+
 
 /******* Style général *******/
 body {
-    color: $black;
-    font-family: 'Space Mono', monospace;
+    color: $text-color;
+    font-family: 'Raleway', sans-serif;
     margin: 0;
     overflow-x: hidden;
+    background-color: #F8F5EC;
 }
 
 .container {
-    margin : 0 4em;
+    margin : 0 3em;
     box-sizing: border-box;
-}
-
-h1, .title {
-    text-transform: uppercase;
 }
 
 a {
     text-decoration: none;
-    color: $black;
+    color: $text-color;
 }
 
 
