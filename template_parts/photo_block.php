@@ -2,7 +2,7 @@
 // Récupérer les arguments
 if (!isset($args)) {
     $args = array(
-        'post_type' => 'photo',
+        'post_type' => 'realisation',
     );
 }
 

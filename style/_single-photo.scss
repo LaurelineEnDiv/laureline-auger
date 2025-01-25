@@ -21,23 +21,10 @@
             }
     }
 
-    &::before {
-        content: "";
-        display: block;
-        width: 100vw;
-        margin-left: calc(-50vw + 50%); /* Centre sur l'écran */
-        height: 15px;
-        background: linear-gradient(to bottom, #f3f2f2, #ffffff);
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
     figure {
         display: flex; 
-        align-items: flex-end;
+        align-items: flex-start;
         padding-top: 1em;
-        margin-bottom: 0;
 
         .photo-infos {   
             flex: 1 1 50%;
@@ -46,33 +33,20 @@
 
             h1 {
                 font-style: italic;
-                font-weight: 400;
-                font-size: 66px;
-                line-height: 58px;
-                margin: 20px 0;
-                padding-right: 1rem;
-                max-width: 100%; 
-                word-break: break-word;
-
-                @media (max-width: $mobile) {
-                    font-size: 46px;
-                    line-height: 48px;
-                }
-            }
-
-            .title {
-                @media (max-width: $mobile) {
-                    font-size: 14px;
-                }
-            }
-
-            @media (max-width: $mobile) {
-                width:100%;
+                font-weight: 500;
+                font-size: 30px;
+                line-height: 50px; 
             }
         }
 
         .photo {
             flex: 1 1 50%;
+            text-align: center;
+
+            img {
+                max-width: 100%; /* Les images occupent toute la largeur disponible */
+                height: auto;
+            }
 
             figure.wp-block-image {
                 margin-bottom: 0;
