@@ -1,35 +1,15 @@
 .single-photo {
     position: relative;
-    
-    .separator {
-        border: solid 0.5px $black;
-        margin : 0 4em;
-        
-            &.half {
-                width: 42%;
-                margin-left: 4em;
-    
-                @media (max-width: $mobile) {
-                    width: 100%;
-                    margin-left: 0;
-                }
-            }
-    
-            @media (max-width: $mobile) {
-                width: 100%;
-                margin: 0;
-            }
-    }
 
     figure {
         display: flex; 
         align-items: flex-start;
-        padding-top: 1em;
+        box-sizing: border-box; 
 
-        .photo-infos {   
+        .photo-infos, .photo {   
             flex: 1 1 50%;
             width: 100%;
-            box-sizing: border-box; 
+        }   
 
             h1 {
                 font-style: italic;
@@ -37,88 +17,21 @@
                 font-size: 30px;
                 line-height: 50px; 
             }
-        }
-
-        .photo {
-            flex: 1 1 50%;
-            text-align: center;
 
             img {
-                max-width: 100%; /* Les images occupent toute la largeur disponible */
+                max-width: 100%;
                 height: auto;
-            }
-
-            figure.wp-block-image {
-                margin-bottom: 0;
+                margin-left: 1em;
             }
 
             p {
                 margin:0
             }
-        }
+    }
 
         @media (max-width: $mobile) {
             flex-direction: column-reverse;
             align-items: start;
         }
-    }
-
-    //////// Contact + Nav Photos //////////////////
-    .interaction-photo {
-        height: 118px;
-        display: flex;
-        justify-content: space-between; 
-        align-items: center;
-
-        @media (max-width: $tablette) {
-            margin-bottom: 1em;
-        }
-
-        .contact-photo {
-            display: flex;
-            justify-content: space-between; 
-            align-items: center;
-            flex: 1 1 50%;
-
-            @media (max-width: $tablette) {
-                flex: 2 1 70%;
-            }
-
-            a {
-            padding : 1em 7em;
-            background-color: #D8D8D8;
-            border-radius: 2px;
-            }
-
-            @media (max-width: $mobile) {
-                flex-direction: column;
-            }
-        }
-
-        .nav-photos {
-            display: flex;
-            justify-content: flex-end;
-            flex: 1 1 50%;
-            margin-top: 1rem;
-                
-                .thumbnail-current img {
-                    height:71px;
-                    width: 81px;
-                }
         
-                .photo-navigation {
-                    display: flex;
-                    justify-content: space-between;
-        
-                        a {
-                        font-size: 25px;
-                        }
-                }
-
-                @media (max-width: $mobile) {
-                    display: none;
-                }
-            }
-        }
-
 }

@@ -28,6 +28,7 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
 //Charge les fichiers Javascript
 function theme_enqueue_scripts() {
+    wp_enqueue_script('dynamic-word', get_template_directory_uri() . '/js/dynamic-word.js', array(), null, true);
     wp_enqueue_script('menu-mobile', get_template_directory_uri() . '/js/menu-mobile.js', array(), null, true);
     wp_enqueue_script('modale-contact', get_template_directory_uri() . '/js/modale-contact.js', array(), null, true);
 }
