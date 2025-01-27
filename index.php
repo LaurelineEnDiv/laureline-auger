@@ -28,7 +28,7 @@
     </div>
 <!--------- Liste des projets ------------>
     <h2>Réalisations</h2>
-    <div class="photo-block-container">
+    <div class="realisations-block-container">
             <?php
             get_template_part('template_parts/photo_block', null, array(
                 'post_type' => 'realisation',

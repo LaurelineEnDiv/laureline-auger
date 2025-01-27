@@ -1,5 +1,5 @@
 
-.photo-block-container {
+.realisations-block-container {
     margin: 2em 0;
     display: grid;
     gap: 20px;
@@ -10,30 +10,29 @@
         margin: 1.5em 0 4em 0;
     }
 
-    .photo-block {
+    .realisations-block {
         display: contents; /* pour éviter de perturber la grille parent */
 
-        .photo-item {
+        .featured-image {
             position: relative;
             display: inline-block;
 
             img {
                 width: 100%;
-                height: 100%; 
-                /* Forcer les dimensions carrées */
-                aspect-ratio: 1 / 1; /* Format carré (1:1) */
-                object-fit: cover; 
+                height: auto; /* Laisse la hauteur s'adapter au ratio */
+                aspect-ratio: 2 / 1; /* Format rectangulaire (2:1) */
+                object-fit: cover; /* Remplit bien l'espace, en coupant si nécessaire */
 
                 @media (max-width: $tablette) {
-                    height: 100%; 
+                    height: auto; 
                 }
 
                 @media (max-width: $mobile) {
-                    height: 100%; 
+                    height: auto; 
                 }
             }
 
-            .photo-overlay {
+            .overlay {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -83,7 +82,7 @@
                     }
                 }
 
-                .photo-category, .photo-reference {
+                .photo-category {
                     position: absolute;
                     bottom: 10px;
                     right: 10px;
@@ -92,22 +91,15 @@
                     opacity: 0; 
                     transition: opacity 0.5s ease-in-out;
                 }
-
-                .photo-reference {
-                    left: 10px;
-                    font-family: "Poppins", sans-serif; 
-                    font-weight: 500;
-                }
             }
         }
 
-        .photo-item:hover .photo-overlay {
+        .featured-image:hover .overlay {
             opacity: 1;
             visibility: visible;
 
             .lightbox-icon,
             .eye-icon,
-            .photo-reference,
             .photo-category {
                 opacity: 1; 
             }
