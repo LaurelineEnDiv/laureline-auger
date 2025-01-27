@@ -15,10 +15,14 @@ if ($query->have_posts()) : ?>
     <?php while ($query->have_posts()) : $query->the_post(); ?>
         <div class="featured-image">
             <a href="<?php the_permalink(); ?>">
-                <?php 
-                if (has_post_thumbnail()) {
-                    the_post_thumbnail('large'); 
-                }
+            <?php 
+                if (has_post_thumbnail()) :
+                    ?>
+                    <div class="image-container">
+                        <?php the_post_thumbnail('large'); ?>
+                    </div>
+                    <?php
+                endif;
                 ?>
             </a>
 

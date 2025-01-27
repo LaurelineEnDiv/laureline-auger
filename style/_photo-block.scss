@@ -1,8 +1,8 @@
 
 .realisations-block-container {
-    margin: 2em 0;
+    margin: 3em 0;
     display: grid;
-    gap: 20px;
+    gap: 2em 3em;
     grid-template-columns: repeat(2, 1fr);
 
     @media (max-width: $mobile) {
@@ -21,7 +21,7 @@
                 width: 100%;
                 height: auto; /* Laisse la hauteur s'adapter au ratio */
                 aspect-ratio: 2 / 1; /* Format rectangulaire (2:1) */
-                object-fit: cover; /* Remplit bien l'espace, en coupant si nécessaire */
+                object-fit: cover; 
 
                 @media (max-width: $tablette) {
                     height: auto; 
