@@ -13,20 +13,21 @@ $query = new WP_Query($args);
 if ($query->have_posts()) : ?>
     <div class="realisations-block">
     <?php while ($query->have_posts()) : $query->the_post(); ?>
-        <div class="featured-image">
+    <div class="featured-image">
             <a href="<?php the_permalink(); ?>">
-            <?php 
-                if (has_post_thumbnail()) :
-                    ?>
+                <?php if (has_post_thumbnail()) : ?>
                     <div class="image-container">
                         <?php the_post_thumbnail('large'); ?>
                     </div>
-                    <?php
-                endif;
-                ?>
+                <?php endif; ?>
             </a>
+            
+            <!-- Footer Polaroid -->
+            <div class="polaroid-footer">
+                <?php the_title(); ?>
+            </div>
 
-            <!-- Overlay infos + icône Lightbox -->
+            <!-- Overlay infos -->
             <?php
             $categories = get_the_terms(get_the_ID(), 'categorie');
             $category_name = (!empty($categories) && !is_wp_error($categories)) ? esc_html($categories[0]->name) : '';
