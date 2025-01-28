@@ -8,7 +8,6 @@
             <a href="#contact" class="cta-button">Contactez-moi</a>
         </div>
         <div class="hero-graphic">
-            <!-- Exemple d'un élément graphique (forme SVG ou image décorative) -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="graphic-shape">
                 <circle cx="100" cy="100" r="100" fill="#FFD3B5" />
             </svg>
@@ -20,9 +19,11 @@
         <h2 id="dynamic-text">Création de sites Wordpress 
             <span class="dynamic-word"></span>
         </h2>
+            <div class="sites-web-content">
             <p>Développez votre visibilité sur le web avec un site Wordpress sur mesure, 
                 conçu selon les bonnes pratique du Green Code pour des performances optimales 
                 et pour un meilleur référencement naturel. </p>
+            </div>
         </section>
     <!--------- Liste des projets ------------>
         <section class="realisations">

@@ -13,24 +13,16 @@
         z-index: 2;
         max-width: 800px;
 
-        h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin: 0 0 20px;
-            text-transform: uppercase;
-
-            .highlight {
-                font-family: 'Georgia', serif;
-                font-size: 1.8rem;
-                font-style: italic;
-                text-transform: none;
-                color: #D88C6B; 
-            }
+        .highlight {
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            text-transform: none;
+            color: #D88C6B; 
         }
-
+        
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             margin-bottom: 30px;
         }
 
@@ -53,35 +45,33 @@
             }
         }
     }
-}
 
-.hero-graphic {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 1;
-    width: 50%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .graphic-shape {
-        width: 100%;
-        height: 100%;
-        opacity: 0.8;
+    .hero-graphic {
+        position: absolute;
+        bottom: 30px;
+        right: 0;
+        z-index: 1;
+        width: 50%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        .graphic-shape {
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
     }
 }
 
 .sites-web {
-
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin: 1.5em 0;
 
     h2 {
-        text-align: center;
-        font-size: 2rem;
         margin-bottom: 2rem;
         display: flex;
         flex-direction: column; 
@@ -93,18 +83,32 @@
         font-weight: bold;
         font-size: 1.5rem;
         color: #A3C9A8;
-        display: block; /* Force l'élément à être sur une nouvelle ligne */
+        display: block; 
         margin-top: 1.5rem;
-        animation: fade-in-out 2s ease-in-out infinite; /* Animation pour l'effet de texte */
+        opacity: 0; /* Initialement invisible */
+        transform: translateY(-20px); /* Position légèrement en dessous */
+        transition: opacity 0.5s ease, transform 0.5s ease;
+
+        &.active {
+            opacity: 1; 
+            transform: translateY(0); 
+        }
     }
+
+    .sites-web-content {
+        width: 70%;
+        margin: auto;
+        text-align: center;
+    }
+    
+}
+
+.realisations h2 {
+    text-align: center;
 }
 
 
-/* Animation de fondu */
-@keyframes fade-in-out {
-    0%, 100% { opacity: 0; transform: translateY(10px); }
-    50% { opacity: 1; transform: translateY(0); }
-}
+
 
 
 //////// Container //////
