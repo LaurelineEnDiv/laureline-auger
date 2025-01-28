@@ -4,7 +4,7 @@
     <nav class="footer-menu">
             
             <li class="site-info">
-                Tous droits réservés
+            © Laureline Auger 2025 - Tous droits réservés
             </li>
     </nav>
 </footer>

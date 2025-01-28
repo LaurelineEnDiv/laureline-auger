@@ -22,7 +22,7 @@
             <div class="sites-web-content">
             <p>Développez votre visibilité sur le web avec un site Wordpress sur mesure, 
                 conçu selon les bonnes pratique du Green Code pour des performances optimales 
-                et pour un meilleur référencement naturel. </p>
+                et un meilleur référencement naturel. </p>
             </div>
         </section>
     <!--------- Liste des projets ------------>
