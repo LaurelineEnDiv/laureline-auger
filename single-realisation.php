@@ -12,6 +12,7 @@
         // Récupération année (date de publication)
         $annee = get_the_date('Y');
     ?>
+   <div class="classic-separator"></div>
     <div class="single-realisation">
         <figure id="post-<?php the_ID(); ?>" class="container"<?php post_class(); ?>>
             <div class="photo-infos">
@@ -70,17 +71,17 @@
 
     <div class="similar-photos container">
         <h2>Autres réalisations</h2>
-        <div class="photo-block-container">
+        <div class="realisations-block-container">
         <?php
             // Récupération des termes (IDs) de la categorie associés à la photo actuelle
             $current_categories = wp_get_post_terms(get_the_ID(), 'categorie', array('fields' => 'ids'));   
 
             get_template_part('template_parts/photo_block', null, array(
-                'post_type' => 'photo',
+                'post_type' => 'realisation',
                 'posts_per_page' => 2,
                 'orderby' => 'rand',
-                'post__not_in' => array(get_the_ID()), //Exclut la photo actuellement affichée 
-                'tax_query' => array( //requête conditionnelle pour sélectionner uniquement les photos de la même catégorie
+                'post__not_in' => array(get_the_ID()), 
+                'tax_query' => array( 
                     array(
                         'taxonomy' => 'categorie',
                         'field' => 'term_id',

@@ -95,3 +95,26 @@
 
 }
 
+.classic-separator {
+    width: 100%;
+    height: 4px; /* Épaisseur du séparateur */
+    background: linear-gradient(90deg, #A3C9A8, #78B48B); /* Dégradé horizontal */
+    margin: 2rem 0; /* Espacement au-dessus et en-dessous */
+    border-radius: 2px; /* Coins légèrement arrondis */
+}
+
+
+
+
+.separator {
+    height: 4px; 
+    background: linear-gradient(90deg, #A3C9A8 0%, #78B48B 100%); /* Dégradé */
+    border-radius: 4px; 
+    margin: 2rem 3em; 
+
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Effet d'ombre pour du relief */
+
+    @media (max-width: $mobile) {
+        margin: 2rem 0; /* Réduit les marges latérales sur mobile */
+    }
+}
