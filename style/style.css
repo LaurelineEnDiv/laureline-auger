@@ -144,77 +144,6 @@ Text Domain: laureline-auger
   transform: translate(-10%, -50%);
 }
 
-/*
-h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.bulles {
-    display: flex;
-    justify-content: space-evenly; 
-    align-items: center; 
-    width: 100%; 
-    position: relative;
-    margin: 0 auto; 
-    gap: 0.5rem; 
-}
-
-///Styles des bulles ///
-.bulles h3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    color: #F8F5EC;
-    text-align: center;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
-    animation: float-1 5s ease-in-out infinite; 
-}
-
-// Couleurs variées pour les bulles 
-.bulles h3:nth-child(1) { background-color: #A3C9A8; animation: float-1 6s ease-in-out infinite; } 
-.bulles h3:nth-child(2) { background-color: #D5E2C9; animation: float-2 5.5s ease-in-out infinite; } 
-.bulles h3:nth-child(3) { background-color: #dfac5f; animation: float-3 5s ease-in-out infinite; } 
-.bulles h3:nth-child(4) { background-color: #ecd1b2; animation: float-4 6.5s ease-in-out infinite; } 
-.bulles h3:nth-child(5) { background-color: #CDE1D3; animation: float-5 5.7s ease-in-out infinite; } 
-
-/* Animations distinctes pour chaque bulle 
-@keyframes float-1 {
-    0% { transform: translate(0, 0); }
-    50% { transform: translate(-10px, -10px); }
-    100% { transform: translate(0, 0); }
-}
-
-@keyframes float-2 {
-    0% { transform: translate(0, 0); }
-    50% { transform: translate(10px, -20px); }
-    100% { transform: translate(0, 0); }
-}
-
-@keyframes float-3 {
-    0% { transform: translate(0, 0); }
-    50% { transform: translate(-15px, 10px); }
-    100% { transform: translate(0, 0); }
-}
-
-@keyframes float-4 {
-    0% { transform: translate(0, 0); }
-    50% { transform: translate(20px, -10px); }
-    100% { transform: translate(0, 0); }
-}
-
-@keyframes float-5 {
-    0% { transform: translate(0, 0); }
-    50% { transform: translate(-20px, 20px); }
-    100% { transform: translate(0, 0); }
-}
-*/
 header, .mobile-header {
   position: relative;
   display: flex;
@@ -462,37 +391,90 @@ footer .footer-menu {
   }
 }
 
-.single-photo {
+.single-realisation {
   position: relative;
 }
-.single-photo figure {
+.single-realisation figure {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   box-sizing: border-box;
+  margin-top: 2em;
 }
-.single-photo figure .photo-infos, .single-photo figure .photo {
-  flex: 1 1 50%;
+.single-realisation figure .photo-infos {
+  margin-bottom: 1.5rem;
   width: 100%;
 }
-.single-photo figure h1 {
+.single-realisation figure .photo-infos h1 {
   font-style: italic;
   font-weight: 500;
   font-size: 30px;
   line-height: 50px;
 }
-.single-photo figure img {
-  max-width: 100%;
-  height: auto;
-  margin-left: 1em;
+.single-realisation figure .photo-infos .photo-meta {
+  margin-top: 1rem;
 }
-.single-photo figure p {
-  margin: 0;
+.single-realisation figure .photo-infos .photo-meta .technologies-logos {
+  display: flex; /* Utilise un conteneur flex pour aligner en ligne */
+  gap: 1rem; /* Espacement entre les éléments */
+  list-style: none; /* Supprime les puces */
+  padding: 0; /* Supprime le padding par défaut */
+  margin: 0; /* Supprime les marges par défaut */
+}
+.single-realisation figure .photo-infos .photo-meta .technologies-logos li {
+  display: flex; /* Assure que les éléments internes suivent la flexbox */
+}
+.single-realisation figure .photo-infos .photo-meta .technologies-logos img {
+  width: auto;
+  height: 50px;
+  -o-object-fit: contain;
+     object-fit: contain; /* Ajuste l’image sans la déformer */
+  display: inline-block;
+}
+.single-realisation figure .photo-and-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 2rem;
 }
 @media (max-width: 768px) {
-  .single-photo {
+  .single-realisation figure .photo-and-content {
     flex-direction: column-reverse;
-    align-items: start;
+    align-items: center;
   }
+}
+.single-realisation figure .photo-and-content .photo {
+  flex: 1 1 40%; /* La photo occupe 40% de la largeur */
+}
+@media (max-width: 768px) {
+  .single-realisation figure .photo-and-content .photo {
+    flex: 1 1 100%;
+  }
+}
+.single-realisation figure .photo-and-content .photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* Coins arrondis, facultatif */
+}
+.single-realisation figure .photo-and-content .photo-content {
+  flex: 1 1 60%; /* Le contenu occupe 60% de la largeur */
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+@media (max-width: 768px) {
+  .single-realisation figure .photo-and-content .photo-content {
+    flex: 1 1 100%;
+  }
+}
+.single-realisation figure .photo-and-content .photo-content h2 {
+  margin-top: 0;
+}
+.single-realisation figure .photo-and-content .photo-content p {
+  margin: 0;
+  text-align: justify; /* Texte justifié */
 }
 
 .realisations-block-container {
@@ -515,11 +497,11 @@ footer .footer-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: white; /* Fond blanc pour effet Polaroid */
-  padding: 1em; /* Espacement interne */
-  border: 2px solid #ddd; /* Bordure fine */
-  border-radius: 16px; /* Coins arrondis */
-  box-shadow: 0 6px 12px rgba(216, 140, 107, 0.5); /* Ombre en tons #D88C6B */
+  background: rgb(249, 244, 244);
+  padding: 1em;
+  border: 2px solid #ddd;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(216, 140, 107, 0.5);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -531,7 +513,7 @@ footer .footer-menu {
   width: 100%; /* Largeur complète */
   height: auto;
   overflow: hidden;
-  border-radius: 12px; /* Coins arrondis internes */
+  border-radius: 12px;
 }
 .realisations-block-container .realisations-block .featured-image .image-container img {
   width: 100%;
@@ -545,9 +527,8 @@ footer .footer-menu {
   filter: brightness(1) sepia(0) hue-rotate(0deg); /* Filtre désactivé au hover */
 }
 .realisations-block-container .realisations-block .featured-image .polaroid-footer {
-  margin-top: 15px; /* Bande blanche légèrement plus haute */
+  margin-top: 15px;
   font-size: 14px;
-  color: #444;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;

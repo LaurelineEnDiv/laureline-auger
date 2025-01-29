@@ -1,0 +1,97 @@
+.single-realisation {
+    position: relative;
+
+    figure {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        box-sizing: border-box;
+        margin-top: 2em;
+
+        .photo-infos {
+            margin-bottom: 1.5rem;
+            width: 100%;
+
+            h1 {
+                font-style: italic;
+                font-weight: 500;
+                font-size: 30px;
+                line-height: 50px;
+            }
+
+            .photo-meta {
+                margin-top: 1rem;
+
+                .technologies-logos {
+                    display: flex; /* Utilise un conteneur flex pour aligner en ligne */
+                    gap: 1rem; /* Espacement entre les éléments */
+                    list-style: none; /* Supprime les puces */
+                    padding: 0; /* Supprime le padding par défaut */
+                    margin: 0; /* Supprime les marges par défaut */
+
+                    li {
+                        display: flex; /* Assure que les éléments internes suivent la flexbox */
+                    }
+
+                    img {
+                        width: auto; 
+                        height: 50px; 
+                        object-fit: contain; /* Ajuste l’image sans la déformer */
+                        display: inline-block; 
+                    }
+                }
+            }
+        }
+
+        .photo-and-content {
+            display: flex;
+            flex-direction: row; 
+            gap: 2rem; 
+            align-items: flex-start; 
+            width: 100%; 
+            margin-top: 2rem; 
+
+            @media (max-width: $mobile) {
+                flex-direction: column-reverse;
+                align-items: center;
+            }
+
+            .photo {
+                flex: 1 1 40%; /* La photo occupe 40% de la largeur */
+                
+                @media (max-width: $mobile) {
+                    flex: 1 1 100%;   
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    border-radius: 8px; /* Coins arrondis, facultatif */
+                }
+            }
+
+            .photo-content {
+                flex: 1 1 60%; /* Le contenu occupe 60% de la largeur */
+                font-size: 1.2rem;
+                line-height: 1.8;
+
+                @media (max-width: $mobile) {
+                    flex: 1 1 100%;   
+                }
+
+                h2 {
+                    margin-top:0;
+                }
+    
+                p {
+                    margin: 0;
+                    text-align: justify; /* Texte justifié */
+                }
+            }
+        }
+       
+    }
+
+}
+
