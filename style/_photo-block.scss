@@ -31,15 +31,15 @@
             }
 
             .image-container {
-                width: 100%; /* Largeur complète */
-                height: auto;
+                width: 100%; 
+                height: 100%;
                 overflow: hidden;
                 border-radius: 12px; 
 
                 img {
                     width: 100%;
-                    height: 320px; /* Hauteur augmentée pour un format vertical */
-                    object-fit: cover; /* Ajustement de l'image au conteneur */
+                    height: 320px; 
+                    object-fit: cover; 
                     filter: brightness(0.9) sepia(0.2) hue-rotate(-20deg); /* Filtre dans les tons #FFD3B5 */
                     transition: filter 0.3s ease;
 

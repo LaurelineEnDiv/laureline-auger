@@ -6,19 +6,18 @@
         while ( have_posts() ) : 
             the_post(); 
 
-        // Récupération des taxonomies
+        // Récupération des données
         $categories = get_the_terms( get_the_ID(), 'categorie' ); 
         $technologies = get_the_terms( get_the_ID(), 'technologies' );   
-        // Récupération année (date de publication)
-        $annee = get_the_date('Y');
+        $date = get_the_date('F Y');
     ?>
-   <div class="classic-separator"></div>
+   <div class="header-separator"></div>
     <div class="single-realisation">
         <figure id="post-<?php the_ID(); ?>" class="container"<?php post_class(); ?>>
             <div class="photo-infos">
                 <h1><?php the_title(); ?></h1>
                 <div class="photo-meta">
-                    <p>Date : <?php echo $annee; ?></p>
+                    <p>Date : <?php echo $date; ?></p>
                     <p>Technologies :</p>
                         <ul class="technologies-logos">
                         <?php
@@ -65,34 +64,33 @@
             </div>
         </figure>
         
-    <div>
-        <div class="separator"></div>
-    </div>
-
-    <div class="similar-photos container">
-        <h2>Autres réalisations</h2>
-        <div class="realisations-block-container">
-        <?php
-            // Récupération des termes (IDs) de la categorie associés à la photo actuelle
-            $current_categories = wp_get_post_terms(get_the_ID(), 'categorie', array('fields' => 'ids'));   
-
-            get_template_part('template_parts/photo_block', null, array(
-                'post_type' => 'realisation',
-                'posts_per_page' => 2,
-                'orderby' => 'rand',
-                'post__not_in' => array(get_the_ID()), 
-                'tax_query' => array( 
-                    array(
-                        'taxonomy' => 'categorie',
-                        'field' => 'term_id',
-                        'terms' => $current_categories,
-                    ),
-                ),
-            ));
-        ?>
+        <div>
+            <div class="separator"></div>
         </div>
-    </div>
 
+        <section class="container others">
+            <h2>Autres réalisations</h2>
+            <div class="realisations-block-container">
+            <?php
+                // Récupération des termes (IDs) de la categorie associés à la photo actuelle
+                $current_categories = wp_get_post_terms(get_the_ID(), 'categorie', array('fields' => 'ids'));   
+
+                get_template_part('template_parts/photo_block', null, array(
+                    'post_type' => 'realisation',
+                    'posts_per_page' => 2,
+                    'orderby' => 'rand',
+                    'post__not_in' => array(get_the_ID()), 
+                    'tax_query' => array( 
+                        array(
+                            'taxonomy' => 'categorie',
+                            'field' => 'term_id',
+                            'terms' => $current_categories,
+                        ),
+                    ),
+                ));
+            ?>
+            </div>
+        </section>
     </div>
     <?php 
     endwhile;
