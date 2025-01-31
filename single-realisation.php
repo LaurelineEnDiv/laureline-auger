@@ -15,7 +15,7 @@
     <div class="single-realisation">
         <figure id="post-<?php the_ID(); ?>" class="container"<?php post_class(); ?>>
             <div class="photo-infos">
-                <h1><?php the_title(); ?></h1>
+                <h1 class="light"><?php the_title(); ?></h1>
                 <div class="photo-meta">
                     <p>Date : <?php echo $date; ?></p>
                     <p>Technologies :</p>

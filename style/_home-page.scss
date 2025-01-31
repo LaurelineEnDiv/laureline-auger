@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: #A3C9A8;
+    background: $blue-green;
     overflow: hidden;
 
     .hero-content {
@@ -18,7 +18,7 @@
             font-size: 1.8rem;
             font-style: italic;
             text-transform: none;
-            color: #D88C6B; 
+            color: $pink; 
         }
         
         .subtitle {
@@ -29,8 +29,8 @@
         .cta-button {
             display: inline-block;
             padding: 15px 30px;
-            background-color: #D88C6B; 
-            color: white;
+            background-color: $pink; 
+            color: $cream;
             font-weight: bold;
             border-radius: 25px;
             text-transform: uppercase;
@@ -40,8 +40,8 @@
             &:hover {
                 transform: scale(1.05);
                 box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-                background-color: #B86C54;
-                color: white;
+                background-color: $dark-pink;
+                color: $cream;
             }
         }
     }

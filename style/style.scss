@@ -8,34 +8,38 @@ Version: 1.0
 Text Domain: laureline-auger
 */
 
-/* Palette de couleurs : SCSS */
+// Palette de couleurs 
 $white: #ffffff;
 $black: #000000;
 $text-color: #5A4A42;
+$blue-green: #A3C9A8;
+$cream: #F8F5EC;
+$pink: #D88C6B;
+$dark-pink: #B86C54;
 
-// Variables SCSS générales
+// Valeurs Responsive
 $mobile: 768px;
 $tablette: 1024px;
 
 @import 'home-page';
+@import 'bio';
 @import 'navigation';
 @import 'modale-contact';
 @import 'single-realisation';
 @import 'photo-block';
 
-
-/******* Style général *******/
+// Style général 
 body {
     color: $text-color;
+    background-color: $cream;
     font-family: 'Raleway', sans-serif;
     margin: 0;
     overflow-x: hidden;
-    background-color: #F8F5EC;
+    box-sizing: border-box;
 }
 
 .container {
     margin : 0 3em;
-    box-sizing: border-box;
 }
 
 a {
@@ -47,12 +51,24 @@ h1 {
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
-    margin: 0 0 20px;
     text-transform: uppercase;
+
+    &.light {
+        font-style: italic;
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 3rem;
+    }
 }
 
 h2 {
     font-size: 2rem;
+}
+
+.header-separator {
+    width: 100%;
+    height: 8px; 
+    background: linear-gradient(to bottom, rgba(163, 201, 168, 0.1), rgba(163, 201, 168, 1), rgba(163, 201, 168, 0.1));  
 }
 
 

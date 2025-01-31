@@ -1,0 +1,23 @@
+.columns-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes de taille égale */
+    gap: 2em; /* Espacement entre les colonnes */
+    align-items: start; /* Aligne les contenus des colonnes en haut */
+}
+
+.formations, .experiences {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.formation, .experience {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.formation.visible, .experience.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
