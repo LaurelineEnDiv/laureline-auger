@@ -17,7 +17,7 @@ if ( have_posts() ) :
                 <div class="content">
                     <?php the_content(); ?>
                 </div>
-                <?php get_template_part('template_parts/formations'); ?>
+                <?php get_template_part('template_parts/cv'); ?>
             </article>
         </div>
     <?php 

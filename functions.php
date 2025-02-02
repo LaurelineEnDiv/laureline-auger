@@ -1,21 +1,12 @@
 <?php
 
-    // Support des miniatures
     add_theme_support('post-thumbnails');
-    
-    // Support des titres dynamiques
     add_theme_support('title-tag');
 
     function enable_thumbnail_support_for_cpt() {
         add_post_type_support('realisation', 'thumbnail'); 
     }
     add_action('init', 'enable_thumbnail_support_for_cpt');
-    
-
-    function add_thumbnail_support_for_cptui() {
-        add_post_type_support('slug_de_ton_cpt', 'thumbnail'); // Remplace 'slug_de_ton_cpt' par le slug exact de ton CPT
-    }
-    add_action('init', 'add_thumbnail_support_for_cptui');
     
 
 //Charge le fichier style.css
@@ -56,7 +47,7 @@ function add_contact_menu_class($atts, $item, $args) {
 }
 add_filter('nav_menu_link_attributes', 'add_contact_menu_class', 10, 3);
 
-function get_gutenberg_gallery($content) {
+/*function get_gutenberg_gallery($content) {
     // Convertir le contenu en blocs analysables
     $blocks = parse_blocks($content);
 
@@ -69,7 +60,7 @@ function get_gutenberg_gallery($content) {
 
     return false; // Aucune galerie trouvée
 }
-
+*/
 
 ?>
 

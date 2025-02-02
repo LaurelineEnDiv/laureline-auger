@@ -1,15 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const formations = document.querySelectorAll('.formation');
-    const experiences = document.querySelectorAll('.experience');
+    const elements = document.querySelectorAll('.formation, .experience, .presentation-container, .mission, .valeurs');
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 200); // Décalage de 200ms entre chaque élément
             }
         });
-    }, { threshold: 0.2 }); // Apparition dès que 20% est visible
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
-    formations.forEach(formation => observer.observe(formation));
-    experiences.forEach(experience => observer.observe(experience));
+    elements.forEach(el => observer.observe(el));
 });
+

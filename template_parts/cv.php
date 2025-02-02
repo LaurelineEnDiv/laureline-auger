@@ -66,7 +66,7 @@ $experiences = [
         'date' => '2015-2016',
         'competences' => 'Développement des stratégies de communication. Création de contenus Print & Web, gestion du site Web et des Réseaux Sociaux.
         Rencontres Internationales du Documentaire de Montréal : Coordination conférences & projections presse. Rédaction pitchs films, CP. Réseaux Sociaux.',
-        'lieu' => 'Cinéma Excentris - Festival Documentaire RIDM, Montéeal, Canada',
+        'lieu' => 'Cinéma Excentris - Festival Documentaire RIDM, Montréal, Canada',
     ],
     [
         'titre' => 'Chargée de communication digitale',

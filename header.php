@@ -10,7 +10,7 @@
 <header>
     <div class="site-logo">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/logo-laureline-auger.png" alt="Logo de Laureline Auger, développeuse Wordpress SEO">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/logo-laureline-jaune.png" alt="Logo de Laureline Auger, développeuse Wordpress SEO">
         </a>
     </div>
     <button class="burger-menu" aria-label="Menu">
