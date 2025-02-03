@@ -13,6 +13,10 @@
         z-index: 2;
         max-width: 800px;
 
+        @media (max-width: 768px) {
+            margin: 0 2em; 
+        }
+
         .highlight {
             font-family: 'Georgia', serif;
             font-size: 1.8rem;
@@ -23,25 +27,27 @@
         
         .subtitle {
             font-size: 1.4rem;
-            margin-bottom: 30px;
+            margin-bottom: 2em;
+
+            @media (max-width: 768px) {
+                font-size: 1.2rem; 
+            }
         }
 
         .cta-button {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 15px 35px;
             background-color: $pink; 
-            color: $cream;
-            font-weight: bold;
-            border-radius: 25px;
-            text-transform: uppercase;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: $white;
+            font-style: italic;
+            border-radius: 20px;
+            border: 2px solid $pink; /* Ajouter une bordure légère au bouton */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
             &:hover {
                 transform: scale(1.05);
                 box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-                background-color: $dark-pink;
-                color: $cream;
             }
         }
     }
@@ -97,7 +103,7 @@
     .dynamic-word {
         font-family: 'Georgia', serif;
         font-style: italic;
-        color: #A3C9A8;
+        color: $blue-green;
         display: block; 
         margin-top: 1.5rem;
         opacity: 0; 
@@ -119,8 +125,7 @@
         background-position: left center; 
 
         p {
-            font-size: 1.3em;
-            line-height: 1.6;
+            line-height: 1.4;
             text-align: justify;
             margin : 2em 4em;
         }

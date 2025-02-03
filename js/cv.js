@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll('.formation, .experience, .presentation-container, .mission, .valeurs');
+    const elements = document.querySelectorAll('.formation, .experience, .presentation-container, .missions, .valeurs');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
@@ -13,4 +13,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     elements.forEach(el => observer.observe(el));
 });
-

@@ -11,14 +11,13 @@ Text Domain: laureline-auger
 // Palette de couleurs 
 $white: #ffffff;
 $black: #000000;
-$brown: #5A4A42;
 $blue-green: #A3C9A8;
 $cream: #F7F7F7;
 $pink: #D88C6B;
-$dark-pink: #B86C54;
 $light-orange: #ECD1B2;
 $bleu-klein: #002FA7;
 $grey: #404040;
+$yellow: #f8c824;
 
 // Valeurs Responsive
 $mobile: 768px;
@@ -37,6 +36,7 @@ body {
     background-color: $white;
     font-family: 'Raleway', sans-serif;
     font-size: 1.2rem;
+    line-height: 1.4em;
     margin: 0;
     overflow-x: hidden;
     box-sizing: border-box;
@@ -53,8 +53,8 @@ a {
 
 h1 {
     font-size: 2.5rem;
+    line-height: 1.4em;
     font-weight: 700;
-    line-height: 1.2;
     text-transform: uppercase;
 
     &.light {

@@ -23,6 +23,11 @@ Text Domain: laureline-auger
   z-index: 2;
   max-width: 800px;
 }
+@media (max-width: 768px) {
+  .hero .hero-content {
+    margin: 0 2em;
+  }
+}
 .hero .hero-content .highlight {
   font-family: "Georgia", serif;
   font-size: 1.8rem;
@@ -32,24 +37,27 @@ Text Domain: laureline-auger
 }
 .hero .hero-content .subtitle {
   font-size: 1.4rem;
-  margin-bottom: 30px;
+  margin-bottom: 2em;
+}
+@media (max-width: 768px) {
+  .hero .hero-content .subtitle {
+    font-size: 1.2rem;
+  }
 }
 .hero .hero-content .cta-button {
   display: inline-block;
-  padding: 15px 30px;
+  padding: 15px 35px;
   background-color: #D88C6B;
-  color: #F7F7F7;
-  font-weight: bold;
-  border-radius: 25px;
-  text-transform: uppercase;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #ffffff;
+  font-style: italic;
+  border-radius: 20px;
+  border: 2px solid #D88C6B; /* Ajouter une bordure légère au bouton */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .hero .hero-content .cta-button:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  background-color: #B86C54;
-  color: #F7F7F7;
 }
 .hero .hero-graphic {
   position: absolute;
@@ -118,8 +126,7 @@ Text Domain: laureline-auger
   background-position: left center;
 }
 .sites-web .sites-web-content p {
-  font-size: 1.3em;
-  line-height: 1.6;
+  line-height: 1.4;
   text-align: justify;
   margin: 2em 4em;
 }
@@ -166,12 +173,28 @@ Text Domain: laureline-auger
   text-align: justify;
 }
 
-/* Bloc "Ma Mission" & "Mes Valeurs" */
+/* Sections Missions et Valeurs */
 .missions-valeurs {
   margin-top: 2em;
   display: flex;
-  justify-content: flex-start;
-  gap: 2em; /* Espacement entre les titres */
+  flex-direction: column;
+  width: 100%;
+}
+.missions-valeurs .missions, .missions-valeurs .valeurs {
+  text-align: justify;
+  opacity: 0;
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+.missions-valeurs .missions.visible, .missions-valeurs .valeurs.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.missions-valeurs .missions {
+  transform: translateX(100px);
+  margin-bottom: 2em;
+}
+.missions-valeurs .valeurs {
+  transform: translateX(-100px);
 }
 .missions-valeurs h2 {
   position: relative;
@@ -179,17 +202,28 @@ Text Domain: laureline-auger
   padding-bottom: 10px;
   margin-bottom: 10px;
   text-transform: uppercase;
-  color: #f8c824;
 }
 .missions-valeurs h2::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -5px;
+  bottom: -15px;
   width: 100%;
   height: 12px;
+  color: #f8c824;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 20"><path d="M5,10 C50,-5 150,25 195,10" stroke="%23f8c824" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center;
   background-size: contain;
+}
+.missions-valeurs p {
+  width: 80%;
+  padding: 0.5em 3em;
+}
+.missions-valeurs p::before {
+  content: "\f058";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #f8c824;
+  margin-right: 10px;
 }
 
 /* Section CV */
@@ -200,11 +234,7 @@ Text Domain: laureline-auger
   align-items: start;
   max-width: 1000px;
   margin: 2em auto;
-  /* Style des blocs individuels */
-  /* Ajout d'une couleur différente pour la section expériences */
   /* Animation d'apparition */
-  /* Style des compétences */
-  /* Style des lieux */
 }
 @media (max-width: 768px) {
   .columns-container {
@@ -218,44 +248,49 @@ Text Domain: laureline-auger
 }
 .columns-container .formations h2, .columns-container .experiences h2 {
   margin-bottom: 10px;
-  border-bottom: 2px solid #A3C9A8;
-  padding-bottom: 5px;
+  border-bottom: 3px solid #f8c824;
+  padding-bottom: 10px;
 }
 .columns-container .formations h3, .columns-container .experiences h3 {
   font-size: 18px;
   margin: 0;
-  color: #A3C9A8;
+}
+.columns-container .experiences h2 {
+  border-color: #A3C9A8;
 }
 .columns-container .formation, .columns-container .experience {
-  background: #f8f9fa; /* Gris très clair */
+  background: #F7F7F7;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-left: 5px solid #f8c824; /* Ajout d'une bordure colorée */
+  border-left: 5px solid #f8c824;
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
   opacity: 0;
   transform: translateY(40px);
 }
-.columns-container .experience {
-  border-left-color: #A3C9A8;
-}
-.columns-container .formation.visible, .columns-container .experience.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.columns-container .date {
+.columns-container .formation .date, .columns-container .experience .date {
   font-weight: bold;
   margin-top: 5px;
 }
-.columns-container .competences {
+.columns-container .formation .competences, .columns-container .experience .competences {
   font-size: 14px;
   font-style: italic;
   margin-top: 5px;
 }
-.columns-container .lieu {
+.columns-container .formation .lieu, .columns-container .experience .lieu {
   font-size: 14px;
   font-weight: bold;
   margin-top: 5px;
+}
+.columns-container .experience {
+  border-left-color: #A3C9A8;
+}
+.columns-container .experience h2 {
+  border-color: #A3C9A8;
+}
+.columns-container .formation.visible, .columns-container .experience.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 header, .mobile-header {
@@ -288,6 +323,7 @@ header, .mobile-header {
 }
 .header-menu a:hover, .header-menu .site-info:hover, .footer-menu a:hover, .footer-menu .site-info:hover {
   font-weight: bold;
+  color: #f8c824;
 }
 
 /******** Version mobile ********/
@@ -440,8 +476,8 @@ footer .footer-menu {
   width: 60%;
   max-width: 100%;
   max-height: 80%;
-  background-color: #F7F7F7;
-  border: solid 2px rgba(163, 201, 168, 0.7);
+  background-color: #F7F9F8;
+  border: 2px solid #91B89E;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   z-index: 4;
@@ -450,12 +486,12 @@ footer .footer-menu {
 }
 @media (max-width: 768px) {
   #contact-modal {
-    top: 10%; /* Redescend la modale pour mobile */
+    top: 10%;
     left: 50%;
-    transform: translate(-50%, 0); /* Centré horizontalement */
-    width: 85%; /* Largeur ajustée */
-    height: auto; /* Hauteur auto pour éviter de couper */
-    max-height: 90%; /* Limite max pour éviter dépassement */
+    transform: translate(-50%, 0);
+    width: 85%;
+    height: auto;
+    max-height: 90%;
     border-radius: 8px;
   }
 }
@@ -472,7 +508,7 @@ footer .footer-menu {
 #contact-modal h1::before {
   content: "";
   position: absolute;
-  top: 8%;
+  top: 9%;
   left: 5%;
   width: 60px;
   height: 60px;
@@ -501,7 +537,7 @@ footer .footer-menu {
   margin: 1.5em auto;
   width: 50%;
   padding: 1.2em 0;
-  color: cream;
+  color: #ffffff;
   background-color: #D88C6B;
   border: none;
   border-radius: 8px;
@@ -511,7 +547,6 @@ footer .footer-menu {
   font-size: 1rem;
 }
 #contact-modal .contact-form .wpcf7-form-control.wpcf7-submit:hover {
-  background-color: #B86C54;
   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
   transform: translateY(-3px);
 }
@@ -644,50 +679,52 @@ footer .footer-menu {
     margin: 1.5em 0 4em 0;
   }
 }
-.realisations-block-container .realisations-block {
+
+.realisations-block {
   display: contents;
 }
-.realisations-block-container .realisations-block .featured-image {
+.realisations-block .featured-image {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgb(249, 244, 244);
+  background: #ffffff;
   padding: 1em;
-  border: 2px solid #ddd;
+  border: 2px solid rgba(194, 129, 66, 0.3);
   border-radius: 16px;
-  box-shadow: 0 6px 12px rgba(216, 140, 107, 0.5);
+  box-shadow: 0 6px 12px rgba(194, 129, 66, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.realisations-block-container .realisations-block .featured-image:hover {
-  transform: translateY(-5px); /* Effet de survol léger */
-  box-shadow: 0 8px 16px rgba(216, 140, 107, 0.7);
+.realisations-block .featured-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(194, 129, 66, 0.3);
 }
-.realisations-block-container .realisations-block .featured-image .image-container {
+.realisations-block .image-container {
   width: 100%;
   height: 100%;
   overflow: hidden;
   border-radius: 12px;
 }
-.realisations-block-container .realisations-block .featured-image .image-container img {
+.realisations-block .image-container img {
   width: 100%;
   height: 320px;
   -o-object-fit: cover;
      object-fit: cover;
-  filter: brightness(0.9) sepia(0.2) hue-rotate(-20deg); /* Filtre dans les tons #FFD3B5 */
+  filter: brightness(0.9) sepia(0.1); /* Filtre doux sépia */
   transition: filter 0.3s ease;
 }
-.realisations-block-container .realisations-block .featured-image .image-container img:hover {
-  filter: brightness(1) sepia(0) hue-rotate(0deg); /* Filtre désactivé au hover */
+.realisations-block .image-container img:hover {
+  filter: brightness(1) sepia(0.2); /* Légèrement plus clair au survol */
 }
-.realisations-block-container .realisations-block .featured-image .polaroid-footer {
+.realisations-block .polaroid-footer {
   margin-top: 15px;
   font-size: 14px;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
   line-height: 1.2;
+  color: rgba(140, 90, 55, 0.7);
 }
 
 body {
@@ -695,6 +732,7 @@ body {
   background-color: #ffffff;
   font-family: "Raleway", sans-serif;
   font-size: 1.2rem;
+  line-height: 1.4em;
   margin: 0;
   overflow-x: hidden;
   box-sizing: border-box;
@@ -711,8 +749,8 @@ a {
 
 h1 {
   font-size: 2.5rem;
+  line-height: 1.4em;
   font-weight: 700;
-  line-height: 1.2;
   text-transform: uppercase;
 }
 h1.light {

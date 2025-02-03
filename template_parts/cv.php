@@ -100,7 +100,7 @@ $experiences = [
     </div>
 
     <div class="experiences">
-        <h2>Expériences Professionnelles</h2>
+        <h2>Expériences</h2>
         <?php foreach ($experiences as $experience): ?>
             <div class="experience">
                 <h3><?php echo esc_html($experience['titre']); ?></h3>
