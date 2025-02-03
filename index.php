@@ -21,16 +21,16 @@
         </h2>
             <div class="sites-web-content">
             <p>Développez votre visibilité sur le web avec un site Wordpress sur mesure, 
-                conçu selon les bonnes pratique du Green Code pour des performances optimales 
+                conçu selon les bonnes pratiques du Green Code pour des performances optimales 
                 et un meilleur référencement naturel. </p>
             </div>
         </section>
     <!--------- Liste des projets ------------>
-        <section class="realisations">
+        <section id="portfolio" class="realisations">
             <h2>Réalisations</h2>
             <div class="realisations-block-container">
                     <?php
-                    get_template_part('template_parts/photo_block', null, array(
+                    get_template_part('template_parts/bloc-realisations', null, array(
                         'post_type' => 'realisation',
                         'posts_per_page' => 6,             
                     ));

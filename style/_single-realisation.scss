@@ -1,3 +1,10 @@
+.separator {
+    height: 4px; 
+    background: linear-gradient(90deg, #A3C9A8 0%, #78B48B 100%); 
+    border-radius: 4px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Effet d'ombre pour du relief */
+}
+
 .single-realisation {
     position: relative;
 
@@ -6,7 +13,7 @@
         flex-direction: column;
         align-items: flex-start;
         box-sizing: border-box;
-        margin-top: 2em;
+        margin: 2em 0;
 
         .photo-infos {
             margin-bottom: 1.5rem;
@@ -16,23 +23,46 @@
                 margin-top: 1rem;
 
                 .technologies-logos {
-                    display: flex; /* Utilise un conteneur flex pour aligner en ligne */
-                    gap: 1rem; /* Espacement entre les éléments */
-                    list-style: none; /* Supprime les puces */
-                    padding: 0; /* Supprime le padding par défaut */
-                    margin: 0; /* Supprime les marges par défaut */
+                    display: flex; 
+                    flex-wrap: wrap;
+                    gap: 0.5rem; 
+                    list-style: none; 
+                    padding: 0; 
+                    margin: 0;
 
                     li {
-                        display: flex; /* Assure que les éléments internes suivent la flexbox */
+                        display: flex; 
                     }
 
                     img {
                         width: auto; 
                         height: 50px; 
-                        object-fit: contain; /* Ajuste l’image sans la déformer */
+                        object-fit: contain; 
                         display: inline-block; 
                     }
                 }
+
+                .github-link {
+                    margin-top: 10px;
+                    display: flex;
+                    align-items: center; // Alignement vertical avec le texte
+                    gap: 0.5rem; // Espacement entre l'icône et le texte
+                    margin-left: auto;
+
+                    a img {
+                        width: 100px;
+                        transition: transform 0.2s ease-in-out;
+                    }
+
+                    a:hover img {
+                        transform: scale(1.1);
+                    }
+                }
+                
+               
+                
+                
+                
             }
         }
 
@@ -88,6 +118,7 @@
 
     .others h2 {
         position: relative;
+        margin: 1.5em 0;
         padding-left: 0.9em;
 
         &::before {
@@ -108,14 +139,4 @@
 
 }
 
-.separator {
-    height: 4px; 
-    background: linear-gradient(90deg, #A3C9A8 0%, #78B48B 100%); 
-    border-radius: 4px; 
-    margin: 2rem 3em; 
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Effet d'ombre pour du relief */
 
-    @media (max-width: $mobile) {
-        margin: 2rem 0; /* Réduit les marges latérales sur mobile */
-    }
-}

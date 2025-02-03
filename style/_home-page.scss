@@ -29,7 +29,7 @@
             font-size: 1.4rem;
             margin-bottom: 2em;
 
-            @media (max-width: 768px) {
+            @media (max-width: $mobile) {
                 font-size: 1.2rem; 
             }
         }
@@ -41,9 +41,10 @@
             color: $white;
             font-style: italic;
             border-radius: 20px;
-            border: 2px solid $pink; /* Ajouter une bordure légère au bouton */
+            border: 2px solid $pink; 
             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2em;
 
             &:hover {
                 transform: scale(1.05);
@@ -84,6 +85,10 @@
         flex-direction: column; 
         align-items: center;
 
+        @media (max-width: $mobile) {
+            text-align: center; 
+        }
+
         &::before {
             content: '';
             position: absolute;
@@ -118,19 +123,31 @@
 
     .sites-web-content {
         position: relative; 
-        padding-left: 60px; 
+        display: flex; 
+        align-items: center;
+        gap: 1rem;
+        padding-left: 100px; 
         background-image: url("../images/feuille.png");
         background-size: 100px 100px; 
         background-repeat: no-repeat;
         background-position: left center; 
-
+    
+        @media (max-width: $mobile) {
+            flex-direction: column-reverse; 
+            padding-left: 0; 
+            background-position: top center; 
+        }
+    
         p {
             line-height: 1.4;
             text-align: justify;
-            margin : 2em 4em;
+            margin: 2em 4em;
+    
+            @media (max-width: $mobile) {
+                margin: 6em 1em 2em 1em; 
+            }
         }
     }
-
 }
 
 .realisations h2 {

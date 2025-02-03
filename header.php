@@ -3,7 +3,7 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php wp_head(); // Fonction pour charger les scripts et styles de WordPress et plugins ?>
+    <?php wp_head();?>
 </head>
 <body <?php body_class(); ?>>
 
@@ -21,7 +21,6 @@
 
     <nav class="nav-wrapper">
         <?php
-        // Affiche le menu principal défini dans l’administration WordPress
         wp_nav_menu( array(
             'theme_location' => 'main-menu', 
             'menu_class'     => 'header-menu',
@@ -31,5 +30,5 @@
     <?php get_template_part('template_parts/mobile-menu'); ?>
 </header>
 
-<?php get_template_part('template_parts/contact'); // Inclure la modale de contact ?>
+<?php get_template_part('template_parts/contact'); ?>
 
