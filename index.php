@@ -5,7 +5,7 @@
         <div class="hero-content">
             <h1>Développeuse Wordpress<br>Experte SEO<br><span class="highlight">à Nantes</span></h1>
             <p class="subtitle">Créons ensemble des sites performants, plus écologiques et uniques</p>
-            <a href="#contact" class="cta-button">Contactez-moi</a>
+            <a href="#" class="cta-button open-modale">Contactez-moi</a>
         </div>
         <div class="hero-graphic">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="graphic-shape">

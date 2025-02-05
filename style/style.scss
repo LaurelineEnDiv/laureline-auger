@@ -12,10 +12,9 @@ Text Domain: laureline-auger
 $white: #ffffff;
 $black: #000000;
 $blue-green: #A3C9A8;
-$cream: #F7F7F7;
+$cream: #F7F9F8;
 $pink: #D88C6B;
 $light-orange: #ECD1B2;
-$bleu-klein: #002FA7;
 $grey: #404040;
 $yellow: #f8c824;
 
@@ -28,7 +27,7 @@ $tablette: 1024px;
 @import 'navigation';
 @import 'modale-contact';
 @import 'single-realisation';
-@import 'photo-block';
+@import 'bloc-realisations';
 
 // Style général 
 body {

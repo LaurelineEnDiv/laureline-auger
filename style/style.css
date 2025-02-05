@@ -174,7 +174,7 @@ Text Domain: laureline-auger
 /* Section Présentation */
 .presentation-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   opacity: 0;
   transition: opacity 2.5s ease-in-out;
 }
@@ -184,7 +184,7 @@ Text Domain: laureline-auger
 .presentation-container .photo-texte {
   display: flex;
   align-items: center;
-  gap: 2em;
+  justify-content: center;
 }
 .presentation-container .photo-texte .photo-laureline {
   flex: 1;
@@ -280,7 +280,7 @@ Text Domain: laureline-auger
   border-color: #A3C9A8;
 }
 .columns-container .formation, .columns-container .experience {
-  background: #F7F7F7;
+  background: #F7F9F8;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -584,27 +584,24 @@ footer .footer-menu {
   height: 4px;
   background: linear-gradient(90deg, #A3C9A8 0%, #78B48B 100%);
   border-radius: 4px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Effet d'ombre pour du relief */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.single-realisation {
-  position: relative;
-}
-.single-realisation figure {
+figure {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   box-sizing: border-box;
   margin: 2em 0;
 }
-.single-realisation figure .photo-infos {
+figure .infos {
   margin-bottom: 1.5rem;
   width: 100%;
 }
-.single-realisation figure .photo-infos .photo-meta {
+figure .infos .meta {
   margin-top: 1rem;
 }
-.single-realisation figure .photo-infos .photo-meta .technologies-logos {
+figure .infos .meta .technologies-logos {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -612,31 +609,31 @@ footer .footer-menu {
   padding: 0;
   margin: 0;
 }
-.single-realisation figure .photo-infos .photo-meta .technologies-logos li {
+figure .infos .meta .technologies-logos li {
   display: flex;
 }
-.single-realisation figure .photo-infos .photo-meta .technologies-logos img {
+figure .infos .meta .technologies-logos img {
   width: auto;
   height: 50px;
   -o-object-fit: contain;
      object-fit: contain;
   display: inline-block;
 }
-.single-realisation figure .photo-infos .photo-meta .github-link {
+figure .infos .meta .github-link {
   margin-top: 10px;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-left: auto;
 }
-.single-realisation figure .photo-infos .photo-meta .github-link a img {
+figure .infos .meta .github-link a img {
   width: 100px;
   transition: transform 0.2s ease-in-out;
 }
-.single-realisation figure .photo-infos .photo-meta .github-link a:hover img {
+figure .infos .meta .github-link a:hover img {
   transform: scale(1.1);
 }
-.single-realisation figure .photo-and-content {
+figure .photo-and-content {
   display: flex;
   flex-direction: row;
   gap: 2rem;
@@ -645,48 +642,48 @@ footer .footer-menu {
   margin-top: 2rem;
 }
 @media (max-width: 768px) {
-  .single-realisation figure .photo-and-content {
+  figure .photo-and-content {
     flex-direction: column-reverse;
     align-items: center;
   }
 }
-.single-realisation figure .photo-and-content .photo {
-  flex: 1 1 40%; /* La photo occupe 40% de la largeur */
+figure .photo-and-content .photo {
+  flex: 1 1 40%;
 }
 @media (max-width: 768px) {
-  .single-realisation figure .photo-and-content .photo {
+  figure .photo-and-content .photo {
     flex: 1 1 100%;
   }
 }
-.single-realisation figure .photo-and-content .photo img {
+figure .photo-and-content .photo img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px; /* Coins arrondis, facultatif */
 }
-.single-realisation figure .photo-and-content .photo-content {
-  flex: 1 1 60%; /* Le contenu occupe 60% de la largeur */
+figure .photo-and-content .content {
+  flex: 1 1 60%;
   font-size: 1.2rem;
   line-height: 1.8;
 }
 @media (max-width: 768px) {
-  .single-realisation figure .photo-and-content .photo-content {
+  figure .photo-and-content .content {
     flex: 1 1 100%;
   }
 }
-.single-realisation figure .photo-and-content .photo-content h2 {
+figure .photo-and-content .content h2 {
   margin-top: 0;
 }
-.single-realisation figure .photo-and-content .photo-content p {
+figure .photo-and-content .content p {
   margin: 0;
-  text-align: justify; /* Texte justifié */
+  text-align: justify;
 }
-.single-realisation .others h2 {
+
+.others h2 {
   position: relative;
   margin: 1.5em 0;
   padding-left: 0.9em;
 }
-.single-realisation .others h2::before {
+.others h2::before {
   content: "";
   position: absolute;
   top: 50%;

@@ -2,27 +2,24 @@
     height: 4px; 
     background: linear-gradient(90deg, #A3C9A8 0%, #78B48B 100%); 
     border-radius: 4px; 
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Effet d'ombre pour du relief */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
 }
+    
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    margin: 2em 0;
 
-.single-realisation {
-    position: relative;
+    .infos {
+        margin-bottom: 1.5rem;
+        width: 100%;
 
-    figure {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        box-sizing: border-box;
-        margin: 2em 0;
+        .meta {
+            margin-top: 1rem;
 
-        .photo-infos {
-            margin-bottom: 1.5rem;
-            width: 100%;
-
-            .photo-meta {
-                margin-top: 1rem;
-
-                .technologies-logos {
+            .technologies-logos {
                     display: flex; 
                     flex-wrap: wrap;
                     gap: 0.5rem; 
@@ -40,9 +37,9 @@
                         object-fit: contain; 
                         display: inline-block; 
                     }
-                }
+            }
 
-                .github-link {
+            .github-link {
                     margin-top: 10px;
                     display: flex;
                     align-items: center; // Alignement vertical avec le texte
@@ -57,16 +54,11 @@
                     a:hover img {
                         transform: scale(1.1);
                     }
-                }
-                
-               
-                
-                
-                
             }
         }
+    }
 
-        .photo-and-content {
+    .photo-and-content {
             display: flex;
             flex-direction: row; 
             gap: 2rem; 
@@ -80,7 +72,7 @@
             }
 
             .photo {
-                flex: 1 1 40%; /* La photo occupe 40% de la largeur */
+                flex: 1 1 40%;
                 
                 @media (max-width: $mobile) {
                     flex: 1 1 100%;   
@@ -90,12 +82,11 @@
                     width: 100%;
                     height: auto;
                     display: block;
-                    border-radius: 8px; /* Coins arrondis, facultatif */
                 }
             }
 
-            .photo-content {
-                flex: 1 1 60%; /* Le contenu occupe 60% de la largeur */
+            .content {
+                flex: 1 1 60%; 
                 font-size: 1.2rem;
                 line-height: 1.8;
 
@@ -109,19 +100,19 @@
     
                 p {
                     margin: 0;
-                    text-align: justify; /* Texte justifié */
+                    text-align: justify; 
                 }
             }
-        }
-       
     }
+       
+}
 
-    .others h2 {
-        position: relative;
-        margin: 1.5em 0;
-        padding-left: 0.9em;
+.others h2 {
+    position: relative;
+    margin: 1.5em 0;
+    padding-left: 0.9em;
 
-        &::before {
+    &::before {
             content: '';
             position: absolute;
             top: 50%;
@@ -134,9 +125,8 @@
             background-position: center;
             z-index: -1; 
             transform: translate(-10%, -50%);
-        }
     }
-
 }
+
 
 

@@ -1,14 +1,17 @@
 <footer>
-
-
     <nav class="footer-menu">
-            
-            <li class="site-info">
+        <?php
+            wp_nav_menu( array(
+                'theme_location' => 'footer-menu', 
+                'menu_class'     => 'footer-menu', 
+            ) );
+        ?>
+        <li class="site-info">
             © Laureline Auger 2025 - Tous droits réservés
-            </li>
+        </li>
     </nav>
 </footer>
 
-<?php wp_footer(); // Nécessaire pour les scripts et plugins WordPress ?>
+<?php wp_footer(); ?>
 </body>
 </html>
