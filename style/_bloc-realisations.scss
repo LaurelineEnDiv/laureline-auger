@@ -45,6 +45,10 @@
             filter: brightness(0.9) sepia(0.1); /* Filtre doux sépia */
             transition: filter 0.3s ease;
 
+            @media (max-width: $mobile) {
+                height: 200px;
+            }
+
             &:hover {
                 filter: brightness(1) sepia(0.2); /* Légèrement plus clair au survol */
             }
@@ -59,5 +63,9 @@
         text-align: center;
         line-height: 1.2;
         color: rgba(140, 90, 55, 0.7); 
+
+        @media (max-width: $mobile) {
+            font-size: 12px;
+        }
     }
 }

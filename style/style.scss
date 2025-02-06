@@ -39,10 +39,20 @@ body {
     margin: 0;
     overflow-x: hidden;
     box-sizing: border-box;
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        line-height: 1.2em; 
+    }
+    
 }
 
 .container {
-    margin : 0 3em;
+    margin: 0 3em;
+
+    @media (max-width: 768px) {
+        margin: 0 1.5em; 
+    }
 }
 
 a {
@@ -52,20 +62,30 @@ a {
 
 h1 {
     font-size: 2.5rem;
-    line-height: 1.4em;
     font-weight: 700;
     text-transform: uppercase;
+
+    @media (max-width: 768px) {
+        font-size: 2rem; 
+    }
 
     &.light {
         font-style: italic;
         font-weight: 500;
         font-size: 2rem;
-        line-height: 3rem;
+
+        @media (max-width: 768px) {
+            font-size: 1.8rem; 
+        }
     }
 }
 
 h2 {
     font-size: 2rem;
+
+    @media (max-width: 768px) {
+        font-size: 1.5rem; 
+    }
 }
 
 

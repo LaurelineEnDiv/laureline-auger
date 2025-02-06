@@ -23,6 +23,10 @@
             font-style: italic;
             text-transform: none;
             color: $pink; 
+
+            @media (max-width: 768px) {
+                font-size: 1.6rem;
+            }
         }
         
         .subtitle {
@@ -102,6 +106,11 @@
             background-position: center;
             z-index: -1; 
             transform: translate(-10%, -50%);
+
+            @media (max-width: $mobile) {
+                width: 30px; 
+                height: 30px;  
+            }
         } 
     }
 
@@ -135,6 +144,7 @@
         @media (max-width: $mobile) {
             flex-direction: column-reverse; 
             padding-left: 0; 
+            background-size: 60px 60px; 
             background-position: top center; 
         }
     
@@ -167,5 +177,10 @@
         background-position: center;
         z-index: -1; 
         transform: translate(-10%, -50%);
+
+        @media (max-width: $mobile) {
+            width: 30px; 
+            height: 30px;  
+        }
     } 
 }
