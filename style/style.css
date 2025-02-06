@@ -35,6 +35,11 @@ Text Domain: laureline-auger
   text-transform: none;
   color: #D88C6B;
 }
+@media (max-width: 768px) {
+  .hero .hero-content .highlight {
+    font-size: 1.6rem;
+  }
+}
 .hero .hero-content .subtitle {
   font-size: 1.4rem;
   margin-bottom: 2em;
@@ -109,6 +114,12 @@ Text Domain: laureline-auger
   z-index: -1;
   transform: translate(-10%, -50%);
 }
+@media (max-width: 768px) {
+  .sites-web h2::before {
+    width: 30px;
+    height: 30px;
+  }
+}
 .sites-web .dynamic-word {
   font-family: "Georgia", serif;
   font-style: italic;
@@ -138,6 +149,7 @@ Text Domain: laureline-auger
   .sites-web .sites-web-content {
     flex-direction: column-reverse;
     padding-left: 0;
+    background-size: 60px 60px;
     background-position: top center;
   }
 }
@@ -169,6 +181,12 @@ Text Domain: laureline-auger
   background-position: center;
   z-index: -1;
   transform: translate(-10%, -50%);
+}
+@media (max-width: 768px) {
+  .realisations h2::before {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 /* Section Présentation */
@@ -321,9 +339,19 @@ header, .mobile-header {
   align-items: center;
   padding: 1em 3em;
 }
+@media (max-width: 768px) {
+  header, .mobile-header {
+    padding: 1em 1.5em;
+  }
+}
 
 .site-logo img {
   width: 250px;
+}
+@media (max-width: 768px) {
+  .site-logo img {
+    width: 200px;
+  }
 }
 
 .header-menu, .footer-menu {
@@ -443,7 +471,7 @@ header, .mobile-header {
 }
 #mobile-menu-container .mobile-nav .mobile-menu li a {
   color: #ffffff;
-  font-size: 44px;
+  font-size: 2rem;
   text-transform: uppercase;
 }
 #mobile-menu-container .mobile-nav .mobile-menu li a:hover {
@@ -457,7 +485,7 @@ footer .footer-menu {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1em 0;
+  padding: 1em;
 }
 @media (max-width: 768px) {
   footer .footer-menu {
@@ -745,6 +773,11 @@ figure .photo-and-content .content p {
   filter: brightness(0.9) sepia(0.1); /* Filtre doux sépia */
   transition: filter 0.3s ease;
 }
+@media (max-width: 768px) {
+  .realisations-block .image-container img {
+    height: 200px;
+  }
+}
 .realisations-block .image-container img:hover {
   filter: brightness(1) sepia(0.2); /* Légèrement plus clair au survol */
 }
@@ -757,6 +790,11 @@ figure .photo-and-content .content p {
   line-height: 1.2;
   color: rgba(140, 90, 55, 0.7);
 }
+@media (max-width: 768px) {
+  .realisations-block .polaroid-footer {
+    font-size: 12px;
+  }
+}
 
 body {
   color: #404040;
@@ -768,9 +806,20 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
 }
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+    line-height: 1.2em;
+  }
+}
 
 .container {
   margin: 0 3em;
+}
+@media (max-width: 768px) {
+  .container {
+    margin: 0 1.5em;
+  }
 }
 
 a {
@@ -780,17 +829,30 @@ a {
 
 h1 {
   font-size: 2.5rem;
-  line-height: 1.4em;
   font-weight: 700;
   text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
 h1.light {
   font-style: italic;
   font-weight: 500;
   font-size: 2rem;
-  line-height: 3rem;
+}
+@media (max-width: 768px) {
+  h1.light {
+    font-size: 1.8rem;
+  }
 }
 
 h2 {
   font-size: 2rem;
+}
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+  }
 }/*# sourceMappingURL=style.css.map */
