@@ -118,6 +118,7 @@ Text Domain: laureline-auger
   .sites-web h2::before {
     width: 30px;
     height: 30px;
+    left: 25%;
   }
 }
 .sites-web .dynamic-word {
@@ -186,6 +187,7 @@ Text Domain: laureline-auger
   .realisations h2::before {
     width: 30px;
     height: 30px;
+    left: 35%;
   }
 }
 
@@ -690,8 +692,6 @@ figure .photo-and-content .photo img {
 }
 figure .photo-and-content .content {
   flex: 1 1 60%;
-  font-size: 1.2rem;
-  line-height: 1.8;
 }
 @media (max-width: 768px) {
   figure .photo-and-content .content {
@@ -724,6 +724,12 @@ figure .photo-and-content .content p {
   background-position: center;
   z-index: -1;
   transform: translate(-10%, -50%);
+}
+@media (max-width: 768px) {
+  .others h2::before {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .realisations-block-container {
@@ -809,7 +815,7 @@ body {
 @media (max-width: 768px) {
   body {
     font-size: 1rem;
-    line-height: 1.2em;
+    line-height: 1.6em;
   }
 }
 
@@ -830,21 +836,25 @@ a {
 h1 {
   font-size: 2.5rem;
   font-weight: 700;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem;
+    line-height: 1.4;
   }
 }
 h1.light {
-  font-style: italic;
+  font-size: 1.8rem;
+  line-height: 1.2;
   font-weight: 500;
-  font-size: 2rem;
+  font-style: italic;
 }
 @media (max-width: 768px) {
   h1.light {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    line-height: 1.4;
   }
 }
 
@@ -854,5 +864,6 @@ h2 {
 @media (max-width: 768px) {
   h2 {
     font-size: 1.5rem;
+    line-height: 1.4;
   }
 }/*# sourceMappingURL=style.css.map */

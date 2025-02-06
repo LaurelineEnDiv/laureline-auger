@@ -42,7 +42,7 @@ body {
 
     @media (max-width: 768px) {
         font-size: 1rem;
-        line-height: 1.2em; 
+        line-height: 1.6em; 
     }
     
 }
@@ -63,19 +63,24 @@ a {
 h1 {
     font-size: 2.5rem;
     font-weight: 700;
+    line-height: 1.2;
     text-transform: uppercase;
 
     @media (max-width: 768px) {
         font-size: 2rem; 
+        line-height: 1.4;
     }
 
     &.light {
-        font-style: italic;
+        font-size: 1.8rem;
+        line-height: 1.2;
         font-weight: 500;
-        font-size: 2rem;
+        font-style: italic;
+        
 
         @media (max-width: 768px) {
-            font-size: 1.8rem; 
+            font-size: 1.6rem; 
+            line-height: 1.4;
         }
     }
 }
@@ -85,6 +90,7 @@ h2 {
 
     @media (max-width: 768px) {
         font-size: 1.5rem; 
+        line-height: 1.4;
     }
 }
 

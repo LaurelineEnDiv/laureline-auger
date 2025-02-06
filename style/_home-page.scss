@@ -110,6 +110,7 @@
             @media (max-width: $mobile) {
                 width: 30px; 
                 height: 30px;  
+                left: 25%;
             }
         } 
     }
@@ -154,7 +155,7 @@
             margin: 2em 4em;
     
             @media (max-width: $mobile) {
-                margin: 6em 1em 2em 1em; 
+                margin: 6em 1em 2em 1em;
             }
         }
     }
@@ -180,7 +181,8 @@
 
         @media (max-width: $mobile) {
             width: 30px; 
-            height: 30px;  
+            height: 30px; 
+            left: 35%;  
         }
     } 
 }

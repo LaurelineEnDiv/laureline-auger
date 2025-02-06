@@ -86,9 +86,7 @@ figure {
             }
 
             .content {
-                flex: 1 1 60%; 
-                font-size: 1.2rem;
-                line-height: 1.8;
+                flex: 1 1 60%;
 
                 @media (max-width: $mobile) {
                     flex: 1 1 100%;   
@@ -125,6 +123,11 @@ figure {
             background-position: center;
             z-index: -1; 
             transform: translate(-10%, -50%);
+
+            @media (max-width: $mobile) {
+                width: 30px; 
+                height: 30px;  
+            }
     }
 }
 
