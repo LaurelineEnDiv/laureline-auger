@@ -1,0 +1,171 @@
+.services {
+
+    .hero-content {
+        background: linear-gradient(135deg, rgba($blue-green, 0.9) 0%, rgba($blue-green, 0.7) 100%);
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: $white;
+        position: relative;
+
+        h1 {
+            text-align: center;
+            text-transform: none;
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 60px;
+                height: 3px;
+                background: $pink;
+                margin: 10px auto;
+            }
+        }
+
+        .subtitle {
+            font-size: 1.6rem;
+            margin: 1em;
+        }
+    }
+
+    .intro-image {
+        padding: 2em;
+
+        @media (max-width: $tablette) {
+            padding: 0;
+        }
+
+        @media (max-width: $mobile) {
+            width: 50%;
+            margin: auto;
+        }
+    }
+
+    .green {
+        margin-top: 1em;
+        color: $blue-green;
+    }
+
+    .engagement {
+        background: $cream;
+        border-left: 5px solid $pink;
+        padding: 20px;
+        margin: 2em 0;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        font-size: 1.3rem;
+
+        @media (max-width: $mobile) {
+            font-size: 1rem;
+        }
+    }
+
+    // Animation d'apparition au scroll
+    @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+    .services-content {
+        .pack, .process {
+
+            h3 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5em;
+                text-align: center;
+                position: relative;
+    
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 3px;
+                    background: $pink;
+                    margin: 15px auto;
+                }
+            }
+
+            li {
+                line-height: 1.6;
+                margin-bottom: 15px;
+                gap: 10px;
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+                &.visible {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        .pack {
+        
+            li {
+                list-style: none;
+                position: relative;
+                padding-left: 30px; 
+        
+                &::before {
+                    content: "\f00c"; 
+                    font-family: "Font Awesome 6 Free"; 
+                    font-weight: 900; 
+                    color: $yellow; 
+                    font-size: 1.4rem;
+                    position: absolute;
+                    left: 0;
+                }
+            }
+        }
+
+        .process {
+        
+            li {
+                position: relative;
+                padding-left: 50px;
+                align-items: center;
+                list-style: none;
+        
+                &::before {
+                    font-family: "Font Awesome 6 Free";
+                    font-weight: 900;
+                    color: $yellow;
+                    font-size: 1.5rem;
+                    position: absolute;
+                    left: 0;
+                }
+        
+                &:nth-child(1)::before { content: "\f02d"; } // Icône pour l'étape 1
+                &:nth-child(2)::before { content: "\f0b1"; } // Icône pour l'étape 2
+                &:nth-child(3)::before { content: "\f121"; } // Icône pour l'étape 3
+                &:nth-child(4)::before { content: "\f201"; } // Icône pour l'étape 4
+                &:nth-child(5)::before { content: "\f1eb"; } // Icône pour l'étape 5
+            }
+        }
+        
+    }
+
+    .btn a {
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 40px;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+    }
+    
+}
+

@@ -210,9 +210,6 @@ Text Domain: laureline-auger
   flex: 1;
   max-width: 300px;
 }
-.presentation-container .texte-presentation {
-  text-align: justify;
-}
 
 /* Sections Missions et Valeurs */
 .missions-valeurs {
@@ -332,6 +329,155 @@ Text Domain: laureline-auger
 .columns-container .formation.visible, .columns-container .experience.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.services .hero-content {
+  background: linear-gradient(135deg, rgba(163, 201, 168, 0.9) 0%, rgba(163, 201, 168, 0.7) 100%);
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+}
+.services .hero-content h1 {
+  text-align: center;
+  text-transform: none;
+  position: relative;
+}
+.services .hero-content h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #D88C6B;
+  margin: 10px auto;
+}
+.services .hero-content .subtitle {
+  font-size: 1.6rem;
+  margin: 1em;
+}
+.services .intro-image {
+  padding: 2em;
+}
+@media (max-width: 1024px) {
+  .services .intro-image {
+    padding: 0;
+  }
+}
+@media (max-width: 768px) {
+  .services .intro-image {
+    width: 50%;
+    margin: auto;
+  }
+}
+.services .green {
+  margin-top: 1em;
+  color: #A3C9A8;
+}
+.services .engagement {
+  background: #F7F9F8;
+  border-left: 5px solid #D88C6B;
+  padding: 20px;
+  margin: 2em 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-size: 1.3rem;
+}
+@media (max-width: 768px) {
+  .services .engagement {
+    font-size: 1rem;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.services .services-content .pack h3, .services .services-content .process h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5em;
+  text-align: center;
+  position: relative;
+}
+.services .services-content .pack h3::after, .services .services-content .process h3::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #D88C6B;
+  margin: 15px auto;
+}
+.services .services-content .pack li, .services .services-content .process li {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.services .services-content .pack li.visible, .services .services-content .process li.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.services .services-content .pack li {
+  list-style: none;
+  position: relative;
+  padding-left: 30px;
+}
+.services .services-content .pack li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #f8c824;
+  font-size: 1.4rem;
+  position: absolute;
+  left: 0;
+}
+.services .services-content .process li {
+  position: relative;
+  padding-left: 50px;
+  align-items: center;
+  list-style: none;
+}
+.services .services-content .process li::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #f8c824;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+}
+.services .services-content .process li:nth-child(1)::before {
+  content: "\f02d";
+}
+.services .services-content .process li:nth-child(2)::before {
+  content: "\f0b1";
+}
+.services .services-content .process li:nth-child(3)::before {
+  content: "\f121";
+}
+.services .services-content .process li:nth-child(4)::before {
+  content: "\f201";
+}
+.services .services-content .process li:nth-child(5)::before {
+  content: "\f1eb";
+}
+.services .btn a {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
+}
+.services .btn a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 header, .mobile-header {
@@ -760,6 +906,18 @@ figure .photo-and-content .content p {
   box-shadow: 0 6px 12px rgba(194, 129, 66, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+@media (max-width: 768px) {
+  .realisations-block .featured-image {
+    width: 100%;
+    max-width: 70%;
+    margin: auto;
+  }
+}
+@media (max-width: 400px) {
+  .realisations-block .featured-image {
+    max-width: 90%;
+  }
 }
 .realisations-block .featured-image:hover {
   transform: translateY(-5px);
