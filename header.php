@@ -24,6 +24,8 @@
         wp_nav_menu( array(
             'theme_location' => 'main-menu', 
             'menu_class'     => 'header-menu',
+            'container'      => 'ul', 
+            'depth'          => 2, // Permet d'afficher les sous-menus
         ) );
         ?>
     </nav>
