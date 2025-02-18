@@ -369,8 +369,9 @@ Text Domain: laureline-auger
 }
 @media (max-width: 768px) {
   .services .intro-image {
-    width: 50%;
+    width: 30%;
     margin: auto;
+    margin-top: 1em;
   }
 }
 .services .green {
@@ -441,34 +442,27 @@ Text Domain: laureline-auger
   position: absolute;
   left: 0;
 }
+.services .services-content .process {
+  counter-reset: step-counter;
+}
 .services .services-content .process li {
   position: relative;
   padding-left: 50px;
-  align-items: center;
   list-style: none;
 }
 .services .services-content .process li::before {
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  color: #f8c824;
-  font-size: 1.5rem;
+  counter-increment: step-counter;
+  content: counter(step-counter);
   position: absolute;
-  left: 0;
-}
-.services .services-content .process li:nth-child(1)::before {
-  content: "\f02d";
-}
-.services .services-content .process li:nth-child(2)::before {
-  content: "\f0b1";
-}
-.services .services-content .process li:nth-child(3)::before {
-  content: "\f121";
-}
-.services .services-content .process li:nth-child(4)::before {
-  content: "\f201";
-}
-.services .services-content .process li:nth-child(5)::before {
-  content: "\f1eb";
+  left: 5%;
+  top: 15%;
+  transform: translateY(-50%);
+  color: #f8c824;
+  font-weight: bold;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .services .btn a {
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;

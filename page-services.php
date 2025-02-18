@@ -20,6 +20,9 @@ if ( have_posts() ) :
         if ( $page_slug === 'optimisation-seo' ) {
             $subtitle = "Boostez votre visibilité avec une stratégie SEO efficace";
         }
+        if ( $page_slug === 'support-et-maintenance' ) {
+            $subtitle = "Sécurisez et optimisez les performances de votre site Wordpress";
+        }
         ?>
         <div class="services">
             <article id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
