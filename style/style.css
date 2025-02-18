@@ -641,6 +641,36 @@ header, .mobile-header {
   margin: 0;
   text-align: center;
 }
+#mobile-menu-container .mobile-nav .mobile-menu .sub-menu {
+  display: none; /* Cacher les sous-menus */
+  padding: 0;
+  margin: 0;
+  text-align: left; /* Pour aligner les sous-menus */
+  opacity: 0; /* Rend le sous-menu invisible */
+  transition: opacity 0.3s ease-in-out;
+}
+#mobile-menu-container .mobile-nav .mobile-menu .sub-menu.active {
+  display: block; /* Afficher le sous-menu */
+  opacity: 1; /* Rend le sous-menu visible */
+  animation: fadeIn 0.3s ease-in-out; /* Applique l'animation */
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px); /* Légère montée pour un effet plus fluide */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#mobile-menu-container .mobile-nav .mobile-menu .sub-menu li {
+  padding-left: 1em;
+}
+#mobile-menu-container .mobile-nav .mobile-menu .sub-menu li a {
+  font-size: 1.3rem;
+  color: #404040;
+}
 #mobile-menu-container .mobile-nav .mobile-menu li {
   margin: 2em;
 }
