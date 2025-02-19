@@ -38,11 +38,27 @@ header, .mobile-header {
         position: absolute;
         top: 100%;
         left: 0;
-        background: white;
+        background: $white;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         min-width: 200px;
         padding: 10px 0;
+        border-radius: 10px;
         z-index: 1000;
+
+        li {
+            display: block;
+            padding: 10px;
+            white-space: nowrap;
+
+            a {
+                text-decoration: none;
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    li:hover > .sub-menu {
+        display: block; /* Affichage au survol */
     }
 
     a, .site-info {
@@ -56,29 +72,6 @@ header, .mobile-header {
         }
     }
 }
-
-.header-menu li:hover > .sub-menu {
-    display: block; /* Affichage au survol */
-}
-
-/* Style des liens du sous-menu */
-.header-menu .sub-menu li {
-    display: block;
-    padding: 10px 20px;
-    white-space: nowrap;
-}
-
-.header-menu .sub-menu li a {
-    color: black;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.header-menu .sub-menu li a:hover {
-    background: #f0f0f0;
-}
-
-
 
 /******** Version mobile ********/
 .burger-menu {
@@ -183,12 +176,12 @@ header, .mobile-header {
                 margin: 0;
                 text-align: left; /* Pour aligner les sous-menus */
                 opacity: 0; /* Rend le sous-menu invisible */
-                transition: opacity 0.3s ease-in-out;
+                transition: opacity 0.5s ease-in-out;
 
                 &.active {
                     display: block; /* Afficher le sous-menu */
                     opacity: 1; /* Rend le sous-menu visible */
-                    animation: fadeIn 0.3s ease-in-out; /* Applique l'animation */
+                    animation: fadeIn 0.5s ease-in-out; /* Applique l'animation */
                 }
 
                 @keyframes fadeIn {
