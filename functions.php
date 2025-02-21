@@ -3,6 +3,32 @@
 add_theme_support('post-thumbnails');
 add_theme_support('title-tag');
 
+add_filter('wpcf7_validate', 'custom_recaptcha_verification', 20, 2);
+function custom_recaptcha_verification($result, $tags) {
+    $recaptcha_secret = RECAPTCHA_SECRET_KEY;
+    $recaptcha_response = $_POST['g-recaptcha-response'];
+
+    // Vérification avec Google
+    $verify_url = 'https://www.google.com/recaptcha/api/siteverify';
+    $response = wp_remote_post($verify_url, [
+        'body' => [
+            'secret' => $recaptcha_secret,
+            'response' => $recaptcha_response,
+            'remoteip' => $_SERVER['REMOTE_ADDR']
+        ]
+    ]);
+
+    $response_body = wp_remote_retrieve_body($response);
+    $result_json = json_decode($response_body, true);
+
+    if (!$result_json['success'] || $result_json['score'] < 0.5) {
+        $result->invalidate('recaptcha', 'Échec de la validation reCAPTCHA. Essayez encore.');
+    }
+
+    return $result;
+}
+
+
 // Activer les images à la une pour le CPT "realisation"
 function enable_thumbnail_support_for_cpt() {
     add_post_type_support('realisation', 'thumbnail'); 

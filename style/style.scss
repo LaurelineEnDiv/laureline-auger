@@ -41,17 +41,16 @@ body {
     overflow-x: hidden;
     box-sizing: border-box;
 
-    @media (max-width: 768px) {
+    @media (max-width: $mobile) {
         font-size: 1rem;
         line-height: 1.6em; 
     }
-    
 }
 
 .container {
     margin: 0 3em;
 
-    @media (max-width: 768px) {
+    @media (max-width: $mobile) {
         margin: 0 1.5em;
     }
 }
@@ -67,7 +66,7 @@ h1 {
     line-height: 1.2;
     text-transform: uppercase;
 
-    @media (max-width: 768px) {
+    @media (max-width: $mobile) {
         font-size: 2rem; 
         line-height: 1.4;
     }
@@ -79,7 +78,7 @@ h1 {
         font-style: italic;
         
 
-        @media (max-width: 768px) {
+        @media (max-width: $mobile) {
             font-size: 1.6rem; 
             line-height: 1.4;
         }
@@ -88,10 +87,11 @@ h1 {
 
 h2 {
     font-size: 2rem;
+    line-height: 1.4;
 
-    @media (max-width: 768px) {
+    @media (max-width: $mobile) {
         font-size: 1.5rem; 
-        line-height: 1.4;
+        line-height: 1.2;
     }
 }
 

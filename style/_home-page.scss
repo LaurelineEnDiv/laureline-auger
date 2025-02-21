@@ -23,10 +23,6 @@
             font-style: italic;
             text-transform: none;
             color: $pink; 
-
-            @media (max-width: 768px) {
-                font-size: 1.6rem;
-            }
         }
         
         .subtitle {
@@ -35,24 +31,6 @@
 
             @media (max-width: $mobile) {
                 font-size: 1.2rem; 
-            }
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 15px 35px;
-            background-color: $pink; 
-            color: $white;
-            font-style: italic;
-            border-radius: 20px;
-            border: 2px solid $pink; 
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2em;
-
-            &:hover {
-                transform: scale(1.05);
-                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
             }
         }
     }
@@ -76,44 +54,30 @@
     }
 }
 
-.sites-web {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 1.5em 0 3em 0;
+
+.services, .realisations {
+    text-align: center;
+    margin: 4em 0;
 
     h2 {
-        margin-bottom: 2rem;
         position: relative;
-        display: flex;
-        flex-direction: column; 
-        align-items: center;
-
-        @media (max-width: $mobile) {
-            text-align: center; 
-        }
 
         &::before {
             content: '';
             position: absolute;
             top: 20%;
-            left: 30%; 
-            width: 60px; 
-            height: 60px; 
+            width: 50px; 
+            height: 50px; 
             background-image: url("../images/yellow-ellipse.png"); 
             background-size: contain;
             background-repeat: no-repeat;
-            background-position: center;
             z-index: -1; 
-            transform: translate(-10%, -50%);
-
-            @media (max-width: $mobile) {
-                width: 30px; 
-                height: 30px;  
-                left: 25%;
-            }
+            transform: translate(-50%,-50%);
         } 
     }
+}
+
+///////// CREATION DE SITES WEB ///////////
 
     .dynamic-word {
         font-family: 'Georgia', serif;
@@ -145,8 +109,8 @@
         @media (max-width: $mobile) {
             flex-direction: column-reverse; 
             padding-left: 0; 
-            background-size: 60px 60px; 
             background-position: top center; 
+            background-size: 60px 60px;
         }
     
         p {
@@ -155,34 +119,113 @@
             margin: 2em 4em;
     
             @media (max-width: $mobile) {
-                margin: 6em 1em 2em 1em;
+                margin: 6em 1em 2em 1em; 
             }
         }
     }
-}
 
-.realisations h2 {
-    text-align: center;
-    position: relative;
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 40%;
-        left: 40%; 
-        width: 60px; 
-        height: 60px; 
-        background-image: url("../images/yellow-ellipse.png"); 
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        z-index: -1; 
-        transform: translate(-10%, -50%);
+////////// SEO ///////////
+    .seo-content {
+        display: flex;
+        margin-bottom: 1em;
 
         @media (max-width: $mobile) {
-            width: 30px; 
-            height: 30px; 
-            left: 35%;  
+            flex-direction: column-reverse;
+            align-items: center;
+            text-align: center;
         }
-    } 
+    }
+
+    .seo-text {
+        width: 70%;
+        text-align: justify;
+
+        @media (max-width: $mobile) {
+            width: 100%;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                display: flex;
+                align-items: center;
+                gap: 10px; 
+                margin-bottom: 10px;
+
+                @media (max-width: $tablette) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 5px;
+                }
+
+                .top-line {
+
+                    @media (max-width: $tablette) {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    i {
+                        display: inline-block;
+                        color: $yellow; 
+                        font-size: 1.3rem; 
+                    }
+    
+                    strong {
+                        display: inline-block;
+                        margin-left: 0.5em;
+                    }
+                }
+
+                .subtitle {
+                    @media (max-width: $tablette) {
+                        margin-left: 2.3em;
+                        text-align: left;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .seo-image {
+        width: 30%;
+        max-width: 300px;
+
+        @media (max-width: $mobile) {
+            width: 30%;
+        }
+
+        img {
+            width: 70%;
+            height: auto;
+            padding: 1em;
+        }
+    }
+
+
+///////// BUTTONS ////////////
+.cta-button {
+    display: inline-block;
+    padding: 8px 16px; 
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #444; 
+    background: rgba(255, 255, 255, 0.2); 
+    border: 1.5px solid $blue-green; 
+    border-radius: 25px; 
+    transition: all 0.3s ease;
+    text-decoration: none; 
+
+    &:hover {
+        background: $blue-green; 
+        color: $white; 
+        transform: translateY(-2px); 
+        box-shadow: 0 4px 10px rgba(163, 201, 168, 0.3);
+    }
 }
+
