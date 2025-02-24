@@ -1,3 +1,4 @@
+//////// HERO HEADER /////////
 .hero {
     position: relative;
     width: 100%;
@@ -54,8 +55,8 @@
     }
 }
 
-
-.services, .realisations {
+////////// SERVICES /////////
+.services {
     text-align: center;
     margin: 4em 0;
 
@@ -73,25 +74,38 @@
             background-repeat: no-repeat;
             z-index: -1; 
             transform: translate(-50%,-50%);
+
+            @media (max-width: $mobile) {
+                width: 40px; 
+                height: 40px; 
+            }
         } 
-    }
-}
 
-///////// CREATION DE SITES WEB ///////////
+        .dynamic-word {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            color: $blue-green;
+            display: block; 
+            margin-top: 1.5rem;
+            opacity: 0; 
+            transform: translateY(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+    
+            &.active {
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
 
-    .dynamic-word {
-        font-family: 'Georgia', serif;
-        font-style: italic;
-        color: $blue-green;
-        display: block; 
-        margin-top: 1.5rem;
-        opacity: 0; 
-        transform: translateY(-20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
+        .subtitle {
+            font-family: 'Georgia', serif;
+            color: $blue-green;
+            font-style: italic;
+            font-size: 1.5rem;
 
-        &.active {
-            opacity: 1; 
-            transform: translateY(0); 
+            @media (max-width: $mobile) {
+                font-size: 1.3rem; 
+            }
         }
     }
 
@@ -114,19 +128,16 @@
         }
     
         p {
-            line-height: 1.4;
             text-align: justify;
             margin: 2em 4em;
     
             @media (max-width: $mobile) {
-                margin: 6em 1em 2em 1em; 
+                margin: 6em 0 2em 0; 
             }
         }
     }
 
-
-////////// SEO ///////////
-    .seo-content {
+    .seo-content, .support-content {
         display: flex;
         margin-bottom: 1em;
 
@@ -137,7 +148,14 @@
         }
     }
 
-    .seo-text {
+    .support-content {
+
+        @media (max-width: $mobile) {
+            flex-direction: column;
+        }
+    }
+
+    .seo-text, .support-text {
         width: 70%;
         text-align: justify;
 
@@ -192,13 +210,20 @@
         }
     }
 
-    .seo-image {
-        width: 30%;
-        max-width: 300px;
+    .support-text {
+        width: 80%;
+        text-align: justify;
 
         @media (max-width: $mobile) {
-            width: 30%;
+            width: 100%;
         }
+    }   
+
+/////// IMAGES ///////////
+    .seo-image, .support-image {
+        width: 30%;
+        max-width: 200px;
+        margin: 0 auto;
 
         img {
             width: 70%;
@@ -207,25 +232,31 @@
         }
     }
 
+    .support-image {
+        width: 20%;
+        max-width: 150px;
+    }
+
 
 ///////// BUTTONS ////////////
-.cta-button {
-    display: inline-block;
-    padding: 8px 16px; 
-    font-size: 0.9em;
-    font-weight: 500;
-    color: #444; 
-    background: rgba(255, 255, 255, 0.2); 
-    border: 1.5px solid $blue-green; 
-    border-radius: 25px; 
-    transition: all 0.3s ease;
-    text-decoration: none; 
+    .cta-button {
+        display: inline-block;
+        padding: 8px 16px; 
+        font-size: 0.9em;
+        font-weight: 500;
+        color: #444; 
+        background: rgba(255, 255, 255, 0.2); 
+        border: 1.5px solid $blue-green; 
+        border-radius: 25px; 
+        transition: all 0.3s ease;
+        text-decoration: none; 
 
-    &:hover {
-        background: $blue-green; 
-        color: $white; 
-        transform: translateY(-2px); 
-        box-shadow: 0 4px 10px rgba(163, 201, 168, 0.3);
+        &:hover {
+            background: $blue-green; 
+            color: $white; 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 10px rgba(163, 201, 168, 0.3);
+        }
     }
 }
 

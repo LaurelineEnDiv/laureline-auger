@@ -61,14 +61,14 @@ Text Domain: laureline-auger
   opacity: 0.8;
 }
 
-.services, .realisations {
+.services {
   text-align: center;
   margin: 4em 0;
 }
-.services h2, .realisations h2 {
+.services h2 {
   position: relative;
 }
-.services h2::before, .realisations h2::before {
+.services h2::before {
   content: "";
   position: absolute;
   top: 20%;
@@ -80,8 +80,13 @@ Text Domain: laureline-auger
   z-index: -1;
   transform: translate(-50%, -50%);
 }
-
-.dynamic-word {
+@media (max-width: 768px) {
+  .services h2::before {
+    width: 40px;
+    height: 40px;
+  }
+}
+.services h2 .dynamic-word {
   font-family: "Georgia", serif;
   font-style: italic;
   color: #A3C9A8;
@@ -91,12 +96,22 @@ Text Domain: laureline-auger
   transform: translateY(-20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-.dynamic-word.active {
+.services h2 .dynamic-word.active {
   opacity: 1;
   transform: translateY(0);
 }
-
-.sites-web-content {
+.services h2 .subtitle {
+  font-family: "Georgia", serif;
+  color: #A3C9A8;
+  font-style: italic;
+  font-size: 1.5rem;
+}
+@media (max-width: 768px) {
+  .services h2 .subtitle {
+    font-size: 1.3rem;
+  }
+}
+.services .sites-web-content {
   position: relative;
   display: flex;
   align-items: center;
@@ -108,101 +123,110 @@ Text Domain: laureline-auger
   background-position: left center;
 }
 @media (max-width: 768px) {
-  .sites-web-content {
+  .services .sites-web-content {
     flex-direction: column-reverse;
     padding-left: 0;
     background-position: top center;
     background-size: 60px 60px;
   }
 }
-.sites-web-content p {
-  line-height: 1.4;
+.services .sites-web-content p {
   text-align: justify;
   margin: 2em 4em;
 }
 @media (max-width: 768px) {
-  .sites-web-content p {
-    margin: 6em 1em 2em 1em;
+  .services .sites-web-content p {
+    margin: 6em 0 2em 0;
   }
 }
-
-.seo-content {
+.services .seo-content, .services .support-content {
   display: flex;
   margin-bottom: 1em;
 }
 @media (max-width: 768px) {
-  .seo-content {
+  .services .seo-content, .services .support-content {
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
   }
 }
-
-.seo-text {
+@media (max-width: 768px) {
+  .services .support-content {
+    flex-direction: column;
+  }
+}
+.services .seo-text, .services .support-text {
   width: 70%;
   text-align: justify;
 }
 @media (max-width: 768px) {
-  .seo-text {
+  .services .seo-text, .services .support-text {
     width: 100%;
   }
 }
-.seo-text ul {
+.services .seo-text ul, .services .support-text ul {
   list-style: none;
   padding: 0;
 }
-.seo-text ul li {
+.services .seo-text ul li, .services .support-text ul li {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
 }
 @media (max-width: 1024px) {
-  .seo-text ul li {
+  .services .seo-text ul li, .services .support-text ul li {
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
   }
 }
 @media (max-width: 1024px) {
-  .seo-text ul li .top-line {
+  .services .seo-text ul li .top-line, .services .support-text ul li .top-line {
     display: flex;
     align-items: center;
     gap: 10px;
   }
 }
-.seo-text ul li .top-line i {
+.services .seo-text ul li .top-line i, .services .support-text ul li .top-line i {
   display: inline-block;
   color: #f8c824;
   font-size: 1.3rem;
 }
-.seo-text ul li .top-line strong {
+.services .seo-text ul li .top-line strong, .services .support-text ul li .top-line strong {
   display: inline-block;
   margin-left: 0.5em;
 }
 @media (max-width: 1024px) {
-  .seo-text ul li .subtitle {
+  .services .seo-text ul li .subtitle, .services .support-text ul li .subtitle {
     margin-left: 2.3em;
     text-align: left;
   }
 }
-
-.seo-image {
-  width: 30%;
-  max-width: 300px;
+.services .support-text {
+  width: 80%;
+  text-align: justify;
 }
 @media (max-width: 768px) {
-  .seo-image {
-    width: 30%;
+  .services .support-text {
+    width: 100%;
   }
 }
-.seo-image img {
+.services .seo-image, .services .support-image {
+  width: 30%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+.services .seo-image img, .services .support-image img {
   width: 70%;
   height: auto;
   padding: 1em;
 }
-
-.cta-button {
+.services .support-image {
+  width: 20%;
+  max-width: 150px;
+}
+.services .cta-button {
   display: inline-block;
   padding: 8px 16px;
   font-size: 0.9em;
@@ -214,7 +238,7 @@ Text Domain: laureline-auger
   transition: all 0.3s ease;
   text-decoration: none;
 }
-.cta-button:hover {
+.services .cta-button:hover {
   background: #A3C9A8;
   color: #ffffff;
   transform: translateY(-2px);
