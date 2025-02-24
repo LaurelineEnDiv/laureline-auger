@@ -24,7 +24,7 @@ if ( have_posts() ) :
             $subtitle = "Sécurisez et optimisez les performances de votre site Wordpress";
         }
         ?>
-        <div class="services">
+        <div class="page-services">
             <article id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <div class="hero-content">
                     <h1><?php the_title(); ?></h1>

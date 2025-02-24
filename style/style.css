@@ -385,7 +385,7 @@ Text Domain: laureline-auger
   transform: translateY(0);
 }
 
-.services .hero-content {
+.page-services .hero-content {
   background: linear-gradient(135deg, rgba(163, 201, 168, 0.9) 0%, rgba(163, 201, 168, 0.7) 100%);
   height: 50vh;
   display: flex;
@@ -396,12 +396,12 @@ Text Domain: laureline-auger
   color: #ffffff;
   position: relative;
 }
-.services .hero-content h1 {
+.page-services .hero-content h1 {
   text-align: center;
   text-transform: none;
   position: relative;
 }
-.services .hero-content h1::after {
+.page-services .hero-content h1::after {
   content: "";
   display: block;
   width: 60px;
@@ -409,30 +409,30 @@ Text Domain: laureline-auger
   background: #D88C6B;
   margin: 10px auto;
 }
-.services .hero-content .subtitle {
+.page-services .hero-content .subtitle {
   font-size: 1.6rem;
   margin: 1em;
 }
-.services .intro-image {
+.page-services .intro-image {
   padding: 2em;
 }
 @media (max-width: 1024px) {
-  .services .intro-image {
+  .page-services .intro-image {
     padding: 0;
   }
 }
 @media (max-width: 768px) {
-  .services .intro-image {
+  .page-services .intro-image {
     width: 30%;
     margin: auto;
     margin-top: 1em;
   }
 }
-.services .green {
+.page-services .green {
   margin-top: 1em;
   color: #A3C9A8;
 }
-.services .engagement {
+.page-services .engagement {
   background: #F7F9F8;
   border-left: 5px solid #D88C6B;
   padding: 20px;
@@ -442,7 +442,7 @@ Text Domain: laureline-auger
   font-size: 1.3rem;
 }
 @media (max-width: 768px) {
-  .services .engagement {
+  .page-services .engagement {
     font-size: 1rem;
   }
 }
@@ -456,13 +456,13 @@ Text Domain: laureline-auger
     transform: translateY(0);
   }
 }
-.services .services-content .pack h3, .services .services-content .process h3 {
+.page-services .services-content .pack h3, .page-services .services-content .process h3 {
   font-size: 1.8rem;
   margin-bottom: 1.5em;
   text-align: center;
   position: relative;
 }
-.services .services-content .pack h3::after, .services .services-content .process h3::after {
+.page-services .services-content .pack h3::after, .page-services .services-content .process h3::after {
   content: "";
   display: block;
   width: 50px;
@@ -470,7 +470,7 @@ Text Domain: laureline-auger
   background: #D88C6B;
   margin: 15px auto;
 }
-.services .services-content .pack li, .services .services-content .process li {
+.page-services .services-content .pack li, .page-services .services-content .process li {
   line-height: 1.6;
   margin-bottom: 15px;
   gap: 10px;
@@ -478,16 +478,16 @@ Text Domain: laureline-auger
   transform: translateY(30px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-.services .services-content .pack li.visible, .services .services-content .process li.visible {
+.page-services .services-content .pack li.visible, .page-services .services-content .process li.visible {
   opacity: 1;
   transform: translateY(0);
 }
-.services .services-content .pack li {
+.page-services .services-content .pack li {
   list-style: none;
   position: relative;
   padding-left: 30px;
 }
-.services .services-content .pack li::before {
+.page-services .services-content .pack li::before {
   content: "\f00c";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
@@ -496,15 +496,15 @@ Text Domain: laureline-auger
   position: absolute;
   left: 0;
 }
-.services .services-content .process {
+.page-services .services-content .process {
   counter-reset: step-counter;
 }
-.services .services-content .process li {
+.page-services .services-content .process li {
   position: relative;
   padding-left: 50px;
   list-style: none;
 }
-.services .services-content .process li::before {
+.page-services .services-content .process li::before {
   counter-increment: step-counter;
   content: counter(step-counter);
   position: absolute;
@@ -518,12 +518,12 @@ Text Domain: laureline-auger
   justify-content: center;
   align-items: center;
 }
-.services .btn a {
+.page-services .btn a {
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 40px;
 }
-.services .btn a:hover {
+.page-services .btn a:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }

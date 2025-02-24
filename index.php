@@ -61,21 +61,9 @@
                     </ul>
                 </div>
             </div>
-             <a href="https://laureline-auger.fr/support-maintenance/" class="cta-button">J'ai besoin d'un support technique</a>
+             <a href="https://laureline-auger.fr/support-et-maintenance/" class="cta-button">J'ai besoin d'un support technique</a>
         </section>
 
-    <!--------- Liste des projets ------------>
-        <section id="portfolio" class="realisations">
-            <h2>Réalisations</h2>
-            <div class="realisations-block-container">
-                    <?php
-                    get_template_part('template_parts/bloc-realisations', null, array(
-                        'post_type' => 'realisation',
-                        'posts_per_page' => 6,             
-                    ));
-                    ?>
-            </div>
-        </section>   
     </div>
 </main>
 
