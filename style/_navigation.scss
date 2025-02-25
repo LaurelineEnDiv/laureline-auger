@@ -227,21 +227,29 @@ header, .mobile-header {
 
 //////// Footer ////////////
 footer {
-    border-top: solid 1px $black;
+    border-top: solid 1px $blue-green;
 
     .footer-menu {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
-        padding: 1em;
+        padding: 1em 2em;
+
+        @media (max-width: $tablette) {
+            padding: 1em;
+        }
 
         @media (max-width: $mobile) {
             flex-direction: column;
         }
 
         .site-info {
-            @media (max-width: $mobile) {
-                margin-top: -20px;
+            color:$blue-green;
+            font-weight: bold;
+            
+            &:hover { 
+                cursor: default;
+                color:$blue-green;
             }
         }
     }

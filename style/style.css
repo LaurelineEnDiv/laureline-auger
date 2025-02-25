@@ -730,23 +730,31 @@ header, .mobile-header {
 }
 
 footer {
-  border-top: solid 1px #000000;
+  border-top: solid 1px #A3C9A8;
 }
 footer .footer-menu {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  padding: 1em;
+  padding: 1em 2em;
+}
+@media (max-width: 1024px) {
+  footer .footer-menu {
+    padding: 1em;
+  }
 }
 @media (max-width: 768px) {
   footer .footer-menu {
     flex-direction: column;
   }
 }
-@media (max-width: 768px) {
-  footer .footer-menu .site-info {
-    margin-top: -20px;
-  }
+footer .footer-menu .site-info {
+  color: #A3C9A8;
+  font-weight: bold;
+}
+footer .footer-menu .site-info:hover {
+  cursor: default;
+  color: #A3C9A8;
 }
 
 .modal-overlay {
