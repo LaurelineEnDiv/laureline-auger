@@ -63,6 +63,7 @@ function theme_enqueue_scripts() {
     wp_enqueue_script('menu-mobile', $js_dir . 'menu-mobile.js', [], null, true);
     wp_enqueue_script('modale-contact', $js_dir . 'modale-contact.js', [], null, true);
     wp_enqueue_script('services', get_template_directory_uri() . '/js/services.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('parallaxe', get_template_directory_uri() . '/js/parallaxe.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
 
