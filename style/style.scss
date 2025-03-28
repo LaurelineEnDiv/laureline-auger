@@ -13,10 +13,11 @@ $white: #ffffff;
 $black: #000000;
 $blue-green: #A3C9A8;
 $cream: #F7F9F8;
-$pink: #D88C6B;
+$pink: #BF845A;
 $light-orange: #ECD1B2;
 $grey: #404040;
 $yellow: #f8c824;
+$sand: #F7F3E9;
 
 // Valeurs Responsive
 $mobile: 768px;
@@ -65,6 +66,7 @@ h1 {
     font-weight: 700;
     line-height: 1.2;
     text-transform: uppercase;
+    margin: 1em 0;
 
     @media (max-width: $mobile) {
         font-size: 2rem; 

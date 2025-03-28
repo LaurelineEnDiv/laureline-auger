@@ -1,24 +1,33 @@
 <?php get_header(); ?>
 
 <main>
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Développeuse Wordpress<br>Experte SEO<br><span class="highlight">à Nantes</span></h1>
-            <p class="subtitle">Créons ensemble des sites performants, plus écologiques et uniques</p>
-        </div>
-        <div class="hero-graphic">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="graphic-shape">
-                <circle cx="100" cy="100" r="100" fill="#FFD3B5" />
+    <div class="hero-wrapper">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Développeuse Wordpress<br>Experte SEO<br><span class="highlight">à Nantes</span></h1>
+                <p class="subtitle">Créons ensemble des sites performants, plus écologiques et uniques</p>
+            </div>
+            <div class="hero-graphic">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="graphic-shape">
+                    <circle cx="100" cy="100" r="100" fill="#F8C824" />
+                </svg>
+            </div>
+        </section>
+    
+        <div class="curve-divider">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180">
+                <path fill="#A3C9A8" fill-opacity="1" d="M0,160L80,149.3C160,139,320,117,480,112C640,107,800,117,960,112C1120,107,1280,85,1360,74.7L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
             </svg>
         </div>
-    </section>
+    </div>
 
-    <div class="container">
-        <section class="services">
+    <div class="container services-wrapper">
+
+        <section class="services reveal">
             <h2 id="dynamic-text">Création de sites Wordpress 
                 <span class="dynamic-word"></span>
             </h2>
-            <div class="sites-web-content">
+            <div class="content">
             <p>Développez votre visibilité sur le web avec un site Wordpress sur mesure, 
                 conçu selon les bonnes pratiques du Green Code pour des performances optimales 
                 et un meilleur référencement naturel. </p>
@@ -26,10 +35,12 @@
             <a href="https://laureline-auger.fr/creation-de-sites-wordpress-sur-mesure/" class="cta-button">Je veux un site Wordpress sur-mesure</a>
         </section>
 
-        <section class="services">
-        <h2>Optimisation SEO <br><span class="subtitle">pour un meilleur référencement naturel</span></h2>
-            <div class="seo-content">
-                <div class="seo-text">
+
+
+        <section class="services reveal">
+            <h2>Optimisation SEO <br><span class="subtitle">pour un meilleur référencement naturel</span></h2>
+            <div class="content">
+                <div class="text">
                     <p>Un site rapide, structuré et optimisé pour les moteurs de recherche est essentiel pour améliorer votre visibilité en ligne. 
                         En tant qu'experte SEO, je vous propose d'améliorer votre référencement naturel selon trois fondamentaux :</p>
                     <ul>
@@ -38,20 +49,14 @@
                         <li><div class="top-line"><i class="fa-solid fa-eye"></i><strong>Expérience utilisateur :</strong></div><span class="subtitle">Navigation fluide et performance optimisée.</span></li>
                     </ul>
                 </div>
-                <div class="seo-image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/seo-illustration.svg" alt="SEO illustration">
-                </div>
             </div>
             <a href="https://laureline-auger.fr/optimisation-seo/" class="cta-button">Je veux optimiser mon site pour le référencement naturel</a>
         </section>
 
-        <section class="services">
+        <section class="services reveal">
             <h2>Support & Maintenance <br><span class="subtitle">pour un site web sécurisé et performant</span></h2>
-            <div class="support-content">
-                <div class="support-image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/maintenance-site-web.jpg" alt="Support et Maintenance illustration">
-                </div>
-                <div class="support-text">
+            <div class="content">
+                <div class="text">
                     <p>Un site Wordpress nécessite un suivi régulier pour garantir sa sécurité, ses performances et son bon fonctionnement. 
                     Je propose des solutions de maintenance adaptées à vos besoins :</p>
                     <ul>

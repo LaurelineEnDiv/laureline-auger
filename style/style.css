@@ -8,7 +8,14 @@ Description: Thème personnalisé pour Laureline Auger
 Version: 1.0
 Text Domain: laureline-auger
 */
-.hero {
+.hero-wrapper {
+  opacity: 0;
+  transition: opacity 1.5s ease-out;
+}
+.hero-wrapper.active {
+  opacity: 1;
+}
+.hero-wrapper .hero {
   position: relative;
   width: 100%;
   height: 70vh;
@@ -19,32 +26,46 @@ Text Domain: laureline-auger
   background: #A3C9A8;
   overflow: hidden;
 }
-.hero .hero-content {
+.hero-wrapper .hero .hero-content {
   z-index: 2;
   max-width: 800px;
 }
 @media (max-width: 768px) {
-  .hero .hero-content {
+  .hero-wrapper .hero .hero-content {
     margin: 0 2em;
   }
 }
-.hero .hero-content .highlight {
+.hero-wrapper .hero .hero-content h1 {
+  opacity: 0;
+  transition: opacity 2s ease-out 0.4s;
+}
+.hero-wrapper .hero .hero-content h1.active {
+  opacity: 1;
+}
+.hero-wrapper .hero .hero-content h1 .highlight {
   font-family: "Georgia", serif;
   font-size: 1.8rem;
   font-style: italic;
   text-transform: none;
-  color: #D88C6B;
+  color: #BF845A;
 }
-.hero .hero-content .subtitle {
+.hero-wrapper .hero .hero-content .subtitle {
   font-size: 1.4rem;
   margin-bottom: 2em;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 2.3s ease-out 0.4s, transform 2.3s ease-out 0.4s;
 }
 @media (max-width: 768px) {
-  .hero .hero-content .subtitle {
+  .hero-wrapper .hero .hero-content .subtitle {
     font-size: 1.2rem;
   }
 }
-.hero .hero-graphic {
+.hero-wrapper .hero .hero-content .subtitle.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero-wrapper .hero .hero-graphic {
   position: absolute;
   bottom: 30px;
   right: 0;
@@ -57,20 +78,89 @@ Text Domain: laureline-auger
   transition: transform 0.1s ease-out;
   will-change: transform;
 }
-.hero .hero-graphic .graphic-shape {
+.hero-wrapper .hero .hero-graphic .graphic-shape {
   width: 100%;
   height: 100%;
   opacity: 0.8;
 }
-
-.services {
-  text-align: center;
-  margin: 4em 0;
+.hero-wrapper .curve-divider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
-.services h2 {
+.hero-wrapper .curve-divider svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.services-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.services-wrapper .services {
+  background-color: #F7F3E9;
+  padding: 2em 3em;
+  border-radius: 15px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 900px;
+  margin: 2em auto;
   position: relative;
 }
-.services h2::before {
+@media (max-width: 768px) {
+  .services-wrapper .services {
+    transform: none;
+    padding: 1.5em;
+  }
+}
+.services-wrapper .services:hover {
+  transform: translateY(-5px);
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15);
+}
+.services-wrapper .services:first-child::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: -50px;
+  width: 100px;
+  height: 100px;
+  background-image: url("../images/feuille.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media (max-width: 768px) {
+  .services-wrapper .services:first-child::before {
+    width: 80px;
+    height: 80px;
+  }
+}
+.services-wrapper .services:first-child h2::before {
+  display: none;
+}
+.services-wrapper .services:nth-child(odd) {
+  transform: translateX(-5%);
+}
+@media (max-width: 768px) {
+  .services-wrapper .services:nth-child(odd) {
+    transform: none;
+  }
+}
+.services-wrapper .services:nth-child(even) {
+  transform: translateX(5%);
+}
+@media (max-width: 768px) {
+  .services-wrapper .services:nth-child(even) {
+    transform: none;
+  }
+}
+.services-wrapper .services h2 {
+  position: relative;
+}
+.services-wrapper .services h2::before {
   content: "";
   position: absolute;
   top: 20%;
@@ -83,168 +173,119 @@ Text Domain: laureline-auger
   transform: translate(-50%, -50%);
 }
 @media (max-width: 768px) {
-  .services h2::before {
+  .services-wrapper .services h2::before {
     width: 40px;
     height: 40px;
   }
 }
-.services h2 .dynamic-word {
-  font-family: "Georgia", serif;
-  font-style: italic;
-  color: #A3C9A8;
-  display: block;
-  margin-top: 1.5rem;
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-.services h2 .dynamic-word.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-.services h2 .subtitle {
+.services-wrapper .services h2 .subtitle {
   font-family: "Georgia", serif;
   color: #A3C9A8;
   font-style: italic;
   font-size: 1.5rem;
 }
 @media (max-width: 768px) {
-  .services h2 .subtitle {
+  .services-wrapper .services h2 .subtitle {
     font-size: 1.3rem;
   }
 }
-.services .sites-web-content {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding-left: 100px;
-  background-image: url("../images/feuille.png");
-  background-size: 100px 100px;
-  background-repeat: no-repeat;
-  background-position: left center;
+.services-wrapper .services .dynamic-word {
+  font-family: "Georgia", serif;
+  font-style: italic;
+  font-size: 1.8rem;
+  color: #A3C9A8;
+  margin-left: 0.5em;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
-@media (max-width: 768px) {
-  .services .sites-web-content {
-    flex-direction: column-reverse;
-    padding-left: 0;
-    background-position: top center;
-    background-size: 60px 60px;
+@media (max-width: 1024px) {
+  .services-wrapper .services .dynamic-word {
+    display: block;
+    margin: 0.5em 0;
+    font-size: 1.4rem;
   }
 }
-.services .sites-web-content p {
-  text-align: justify;
-  margin: 2em 4em;
+.services-wrapper .services .dynamic-word.active {
+  opacity: 1;
 }
-@media (max-width: 768px) {
-  .services .sites-web-content p {
-    margin: 6em 0 2em 0;
-  }
-}
-.services .seo-content, .services .support-content {
+.services-wrapper .services .content {
   display: flex;
   margin-bottom: 1em;
 }
 @media (max-width: 768px) {
-  .services .seo-content, .services .support-content {
+  .services-wrapper .services .content {
     flex-direction: column-reverse;
     align-items: center;
-    text-align: center;
   }
 }
-@media (max-width: 768px) {
-  .services .support-content {
-    flex-direction: column;
-  }
-}
-.services .seo-text, .services .support-text {
-  width: 70%;
+.services-wrapper .services .text {
   text-align: justify;
 }
-@media (max-width: 768px) {
-  .services .seo-text, .services .support-text {
-    width: 100%;
-  }
-}
-.services .seo-text ul, .services .support-text ul {
+.services-wrapper .services .text ul {
   list-style: none;
   padding: 0;
 }
-.services .seo-text ul li, .services .support-text ul li {
+.services-wrapper .services .text ul li {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 10px;
 }
 @media (max-width: 1024px) {
-  .services .seo-text ul li, .services .support-text ul li {
+  .services-wrapper .services .text ul li {
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
   }
 }
 @media (max-width: 1024px) {
-  .services .seo-text ul li .top-line, .services .support-text ul li .top-line {
+  .services-wrapper .services .text ul li .top-line {
     display: flex;
     align-items: center;
     gap: 10px;
   }
 }
-.services .seo-text ul li .top-line i, .services .support-text ul li .top-line i {
+.services-wrapper .services .text ul li .top-line i {
   display: inline-block;
   color: #f8c824;
   font-size: 1.3rem;
 }
-.services .seo-text ul li .top-line strong, .services .support-text ul li .top-line strong {
+.services-wrapper .services .text ul li .top-line strong {
   display: inline-block;
   margin-left: 0.5em;
 }
 @media (max-width: 1024px) {
-  .services .seo-text ul li .subtitle, .services .support-text ul li .subtitle {
+  .services-wrapper .services .text ul li .subtitle {
     margin-left: 2.3em;
     text-align: left;
   }
 }
-.services .support-text {
-  width: 80%;
-  text-align: justify;
-}
-@media (max-width: 768px) {
-  .services .support-text {
-    width: 100%;
-  }
-}
-.services .seo-image, .services .support-image {
-  width: 30%;
-  max-width: 200px;
-  margin: 0 auto;
-}
-.services .seo-image img, .services .support-image img {
-  width: 70%;
-  height: auto;
-  padding: 1em;
-}
-.services .support-image {
-  width: 20%;
-  max-width: 150px;
-}
-.services .cta-button {
+.services-wrapper .services .cta-button {
   display: inline-block;
   padding: 8px 16px;
   font-size: 0.9em;
   font-weight: 500;
-  color: #444;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1.5px solid #A3C9A8;
-  border-radius: 25px;
+  color: #ffffff;
+  background: #ECD1B2;
+  border-radius: 20px;
   transition: all 0.3s ease;
   text-decoration: none;
 }
-.services .cta-button:hover {
-  background: #A3C9A8;
-  color: #ffffff;
+.services-wrapper .services .cta-button:hover {
+  background: #D9BEA0;
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(163, 201, 168, 0.3);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(70px) scale(0.93);
+  transition: opacity 1.6s ease-out, transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 /* Section Présentation */
@@ -408,7 +449,7 @@ Text Domain: laureline-auger
   display: block;
   width: 60px;
   height: 3px;
-  background: #D88C6B;
+  background: #BF845A;
   margin: 10px auto;
 }
 .page-services .hero-content .subtitle {
@@ -436,7 +477,7 @@ Text Domain: laureline-auger
 }
 .page-services .engagement {
   background: #F7F9F8;
-  border-left: 5px solid #D88C6B;
+  border-left: 5px solid #BF845A;
   padding: 20px;
   margin: 2em 0;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -469,7 +510,7 @@ Text Domain: laureline-auger
   display: block;
   width: 50px;
   height: 3px;
-  background: #D88C6B;
+  background: #BF845A;
   margin: 15px auto;
 }
 .page-services .services-content .pack li, .page-services .services-content .process li {
@@ -851,7 +892,7 @@ footer .footer-menu .site-info:hover {
   width: 50%;
   padding: 1.2em 0;
   color: #ffffff;
-  background-color: #D88C6B;
+  background-color: #BF845A;
   border: none;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -1109,6 +1150,7 @@ h1 {
   font-weight: 700;
   line-height: 1.2;
   text-transform: uppercase;
+  margin: 1em 0;
 }
 @media (max-width: 768px) {
   h1 {

@@ -3,5 +3,5 @@ document.addEventListener("scroll", function () {
     const scrollY = window.scrollY;
     const speed = 0.3; // Ajuste la vitesse du parallaxe
 
-    sphere.style.transform = `translateY(${scrollY * speed}px)`;
+    sphere.style.transform = `translateY(${scrollY * speed}px) translateZ(0)`;
 });
