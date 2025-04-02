@@ -17,11 +17,21 @@ if ( have_posts() ) :
                 <div class="content">
                     <?php the_content(); ?>
                 </div>
+
+                <!--------- Filtres ------------>
+                <div class="filters-container">
+                    <div class="taxonomies">
+                        <div class="filter-group">
+                            <div class="filter-option" data-taxonomy="categorie" data-term-id="creation-de-site-web">Création de Sites Web</div>
+                            <div class="filter-option" data-taxonomy="categorie" data-term-id="seo">SEO</div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="realisations-block-container">
                     <?php
                     get_template_part('template_parts/bloc-realisations', null, array(
-                        'post_type' => 'realisation',
-                        'posts_per_page' => 6,             
+                        'post_type' => 'realisation',          
                     ));
                     ?>
             </div>

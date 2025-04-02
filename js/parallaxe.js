@@ -5,3 +5,4 @@ document.addEventListener("scroll", function () {
 
     sphere.style.transform = `translateY(${scrollY * speed}px) translateZ(0)`;
 });
+

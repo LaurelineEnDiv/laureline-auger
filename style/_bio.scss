@@ -20,6 +20,10 @@
             max-width: 300px;
         }
     }
+
+    p {
+        text-align: justify;
+    }
 }
 
 /* Sections Missions et Valeurs */
@@ -120,7 +124,7 @@
     }
 
     .formation, .experience {
-        background: $cream; 
+        background: $sand; 
         padding: 15px;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

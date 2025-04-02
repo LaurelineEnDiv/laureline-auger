@@ -307,6 +307,9 @@ Text Domain: laureline-auger
   flex: 1;
   max-width: 300px;
 }
+.presentation-container p {
+  text-align: justify;
+}
 
 /* Sections Missions et Valeurs */
 .missions-valeurs {
@@ -394,7 +397,7 @@ Text Domain: laureline-auger
   border-color: #A3C9A8;
 }
 .columns-container .formation, .columns-container .experience {
-  background: #F7F9F8;
+  background: #F7F3E9;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -476,7 +479,7 @@ Text Domain: laureline-auger
   color: #A3C9A8;
 }
 .page-services .engagement {
-  background: #F7F9F8;
+  background: #F7F3E9;
   border-left: 5px solid #BF845A;
   padding: 20px;
   margin: 2em 0;
@@ -830,7 +833,7 @@ footer .footer-menu .site-info:hover {
   width: 60%;
   max-width: 100%;
   max-height: 80%;
-  background-color: #F7F9F8;
+  background-color: #F7F3E9;
   border: 2px solid #91B89E;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -892,7 +895,7 @@ footer .footer-menu .site-info:hover {
   width: 50%;
   padding: 1.2em 0;
   color: #ffffff;
-  background-color: #BF845A;
+  background-color: #ECD1B2;
   border: none;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -903,6 +906,7 @@ footer .footer-menu .site-info:hover {
 #contact-modal .contact-form .wpcf7-form-control.wpcf7-submit:hover {
   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
   transform: translateY(-3px);
+  background-color: #D9BEA0;
 }
 @media (max-width: 768px) {
   #contact-modal .contact-form {
@@ -965,11 +969,10 @@ figure .infos .meta .github-link a:hover img {
 }
 figure .photo-and-content {
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
   align-items: flex-start;
+  justify-content: flex-start;
   width: 100%;
-  margin-top: 2rem;
+  position: relative; /* Assure la superposition correcte */
 }
 @media (max-width: 768px) {
   figure .photo-and-content {
@@ -978,11 +981,16 @@ figure .photo-and-content {
   }
 }
 figure .photo-and-content .photo {
-  flex: 1 1 40%;
+  flex: 0 0 40%;
+  max-width: 40%;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 @media (max-width: 768px) {
   figure .photo-and-content .photo {
-    flex: 1 1 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 figure .photo-and-content .photo img {
@@ -991,19 +999,36 @@ figure .photo-and-content .photo img {
   display: block;
 }
 figure .photo-and-content .content {
-  flex: 1 1 60%;
+  background-color: #F7F3E9;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  position: sticky;
+  top: 0; /* Débute en haut */
+  transition: top 0.3s ease-in-out; /* Animation douce */
+  z-index: 2;
 }
 @media (max-width: 768px) {
   figure .photo-and-content .content {
-    flex: 1 1 100%;
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 1rem;
   }
 }
 figure .photo-and-content .content h2 {
   margin-top: 0;
+  font-size: 1.5rem;
+  color: #444;
 }
 figure .photo-and-content .content p {
   margin: 0;
   text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
 }
 
 .others h2 {
@@ -1025,15 +1050,30 @@ figure .photo-and-content .content p {
   z-index: -1;
   transform: translate(-10%, -50%);
 }
-@media (max-width: 768px) {
-  .others h2::before {
-    width: 30px;
-    height: 30px;
-  }
+
+.filter-option {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: #F7F3E9;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-option:hover {
+  transform: translateY(-3px); /* Décalage vers le haut */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Ombre pour accentuer l'effet */
+}
+
+.filter-option.selected {
+  background-color: #A3C9A8;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .realisations-block-container {
-  margin: 3em 0;
+  margin: 2em 0;
   display: grid;
   gap: 1.5em;
   grid-template-columns: repeat(2, 1fr);
@@ -1054,24 +1094,12 @@ figure .photo-and-content .content p {
   flex-direction: column;
   align-items: center;
   background: #ffffff;
-  padding: 1em;
-  border: 2px solid rgba(194, 129, 66, 0.3);
+  padding: 1.5em;
+  border: 4px solid rgba(194, 129, 66, 0.3);
   border-radius: 16px;
   box-shadow: 0 6px 12px rgba(194, 129, 66, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-@media (max-width: 768px) {
-  .realisations-block .featured-image {
-    width: 100%;
-    max-width: 70%;
-    margin: auto;
-  }
-}
-@media (max-width: 400px) {
-  .realisations-block .featured-image {
-    max-width: 90%;
-  }
 }
 .realisations-block .featured-image:hover {
   transform: translateY(-5px);
@@ -1085,16 +1113,12 @@ figure .photo-and-content .content p {
 }
 .realisations-block .image-container img {
   width: 100%;
+  max-width: 480px;
   height: 320px;
   -o-object-fit: cover;
      object-fit: cover;
   filter: brightness(0.9) sepia(0.1); /* Filtre doux sépia */
   transition: filter 0.3s ease;
-}
-@media (max-width: 768px) {
-  .realisations-block .image-container img {
-    height: 200px;
-  }
 }
 .realisations-block .image-container img:hover {
   filter: brightness(1) sepia(0.2); /* Légèrement plus clair au survol */
@@ -1107,11 +1131,6 @@ figure .photo-and-content .content p {
   text-align: center;
   line-height: 1.2;
   color: rgba(140, 90, 55, 0.7);
-}
-@media (max-width: 768px) {
-  .realisations-block .polaroid-footer {
-    font-size: 12px;
-  }
 }
 
 body {
