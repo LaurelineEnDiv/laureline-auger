@@ -291,24 +291,68 @@ Text Domain: laureline-auger
 /* Section Présentation */
 .presentation-container {
   display: flex;
-  justify-content: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  flex-wrap: wrap;
   opacity: 0;
   transition: opacity 2.5s ease-in-out;
+}
+@media (max-width: 768px) {
+  .presentation-container {
+    padding: 0;
+  }
 }
 .presentation-container.visible {
   opacity: 1;
 }
-.presentation-container .photo-texte {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.presentation-container .photo-laureline {
+  flex-shrink: 0;
+  width: 70%;
+  position: relative;
+  z-index: 1;
 }
-.presentation-container .photo-texte .photo-laureline {
-  flex: 1;
-  max-width: 300px;
+@media (max-width: 768px) {
+  .presentation-container .photo-laureline {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
-.presentation-container p {
+.presentation-container .photo-laureline img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 768px) {
+  .presentation-container .photo-laureline img {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+.presentation-container .texte-presentation {
+  position: relative;
+  background-color: #F7F3E9;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  z-index: 2;
+  transform: translate(-100px, 50px);
+}
+.presentation-container .texte-presentation p {
   text-align: justify;
+  margin: 0;
+  -webkit-hyphens: auto;
+          hyphens: auto;
+}
+@media (max-width: 768px) {
+  .presentation-container .texte-presentation {
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+  }
 }
 
 /* Sections Missions et Valeurs */
@@ -737,7 +781,8 @@ header, .mobile-header {
   display: none; /* Cacher les sous-menus */
   padding: 0;
   margin: 0;
-  text-align: left; /* Pour aligner les sous-menus */
+  text-align: center;
+  list-style: none;
   opacity: 0; /* Rend le sous-menu invisible */
   transition: opacity 0.5s ease-in-out;
 }
@@ -757,10 +802,10 @@ header, .mobile-header {
   }
 }
 #mobile-menu-container .mobile-nav .mobile-menu .sub-menu li {
-  padding-left: 1em;
+  margin: 1.5em;
 }
 #mobile-menu-container .mobile-nav .mobile-menu .sub-menu li a {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #404040;
 }
 #mobile-menu-container .mobile-nav .mobile-menu li {
@@ -1199,4 +1244,8 @@ h2 {
     font-size: 1.5rem;
     line-height: 1.2;
   }
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
 }/*# sourceMappingURL=style.css.map */

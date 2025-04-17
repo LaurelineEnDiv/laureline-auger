@@ -2,27 +2,67 @@
 
 .presentation-container {
     display: flex;
-    justify-content: center;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    flex-wrap: wrap;
     opacity: 0;
     transition: opacity 2.5s ease-in-out;
+
+    @media (max-width: $mobile) {
+        padding: 0;
+    }
 
     &.visible {
         opacity: 1;
     }
 
-    .photo-texte {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .photo-laureline {
+        flex-shrink: 0;
+        width: 70%;
+        position: relative;
+        z-index: 1;
 
-        .photo-laureline {
-            flex: 1;
-            max-width: 300px;
+        @media (max-width: $mobile) {
+            width: 100%;
+            display: flex;
+            justify-content: center; 
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+            @media (max-width: $mobile) {
+                width: 60%;
+                margin: 0 auto;
+            }
         }
     }
 
-    p {
-        text-align: justify;
+    .texte-presentation {
+    position: relative;
+    background-color: $sand;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    z-index: 2;
+    transform: translate(-100px, 50px);
+
+        p {
+            text-align: justify;
+            margin: 0;
+            hyphens: auto;
+        }
+
+        @media (max-width: $mobile) {
+            width: 100%;
+            margin-left: 0;
+            transform: none;
+        }
     }
 }
 

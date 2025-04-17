@@ -174,7 +174,8 @@ header, .mobile-header {
                 display: none; /* Cacher les sous-menus */
                 padding: 0;
                 margin: 0;
-                text-align: left; /* Pour aligner les sous-menus */
+                text-align: center;
+                list-style: none;
                 opacity: 0; /* Rend le sous-menu invisible */
                 transition: opacity 0.5s ease-in-out;
 
@@ -196,17 +197,17 @@ header, .mobile-header {
                 }
 
                 li {
-                    padding-left: 1em;
+                    margin: 1.5em;
 
                     a {
-                        font-size: 1.3rem;
+                        font-size: 1.1rem;
                         color: $grey;
                     }
                 }
             }
 
             li {
-                margin:2em;
+                margin: 2em;
 
                 a {
                     color: $white;
